@@ -1,6 +1,6 @@
 <template>
     <div>
-        产品页面
+      产品页面
     </div>
 </template>
 

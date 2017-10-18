@@ -1,22 +1,24 @@
 <template>
   <div id="app">
+    <v-header></v-header>
     <router-view></router-view>
+    <v-footer></v-footer>
   </div>
 </template>
 
 <script>
+import vHeader from '../src/components/header'
+import vFooter from '../src/components/footer'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    vHeader,
+    vFooter
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+@import '../static/css/normalize.less';
+
 </style>

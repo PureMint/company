@@ -1,11 +1,15 @@
 <template>
-    <div>
+    <section class="home" >
         首页页面
-    </div>
+    </section>
 </template>
 
 
 <style lang="less" scoped>
+.home {
+  margin-top:70px;
+  color: black;
+}
 
 </style>
 

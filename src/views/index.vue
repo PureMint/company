@@ -25,7 +25,7 @@
     .special {
         height: 707px;
         background: url(../../static/img/home/special-bg.png) no-repeat;
-        background-size:100% 100%;  
+        background-size:100% 100%;
     }
 }
 </style>

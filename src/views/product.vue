@@ -1,11 +1,14 @@
 <template>
-    <div>
+    <section class="product">
       产品页面
-    </div>
+    </section>
 </template>
 
 
 <style lang="less" scoped>
+.product {
+  margin-top: 70px; 
+}
 
 </style>
 

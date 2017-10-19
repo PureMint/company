@@ -47,8 +47,8 @@ export default {
   @import '../common/css/variable.less';
   footer {
       width: 100%;
-      position: fixed;
-      bottom: 0;
+    //   position: fixed;
+    //   bottom: 0;
   }
   .navbar {
      background: @color-background-nav;

@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <section class="download">
         
         下载页面
-    </div>
+    </section>
 </template>
 
 
 <style lang="less" scoped>
-
+.download {
+    margin-top: 70px; 
+}
 </style>
 
 

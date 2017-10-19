@@ -5,7 +5,7 @@
         </div>
         <nav class="menu">
             <ul>
-                <li class="animated bounceIn" v-for="(item,index) in navList" :key="item.index" @click="jump(index)">
+                <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index" @click="jump(index)">
                     {{item.menu}}
                     <img v-if="index==5" src=""></img>
                 </li>
@@ -17,11 +17,16 @@
 
 <style lang="less" scoped>
 @import '../common/css/variable.less';
+body {
+    width: 100%;
+    position: relative;
+}
 header {
     width: 100%;
     height: 70px;
     position: fixed;
     top: 0;
+    z-index: 9999;
     background: @color-background-nav;
     .logo {
         position: fixed;
@@ -37,19 +42,21 @@ header {
                 color: @font-color-base;
                 height: 70px;
                 width: 110px;
+                box-sizing: border-box;
                 text-align: center;
                 line-height: 70px;
                 cursor: pointer;
                 &:hover {
                     background: rgba(225, 225, 225, 0.15);
+                    border-bottom: 2px solid @color-border;
+                    color: @color-border;
                 }
             }
         }
     }
     @media screen and (max-width:1080px) {
         ul {
-            display: none;
-            // float: right;
+            display: none; // float: right;
             // padding-right: 100px;
             >li {
                 color: #fff;

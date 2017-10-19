@@ -27,7 +27,7 @@
     data() {
       return {
         liList: [
-          {li: '移动端111111111111'},
+          {li: '移动端'},
           {li: '首页'},
           {li: '产品'},
           {li: '服务'},
@@ -44,14 +44,15 @@
 </script>
 
 <style lang="less" scoped>
+  @import '../common/css/variable.less';
   .navbar {
-    background:@color-font;
+    background:@color-background-nav;
   }
 
   .footer-main {
     height: 80px;
     line-height: 80px;
-    border-bottom: 1px solid @color-font;
+    border-bottom: 1px solid @color-background-nav;
     min-width: 400px;
   }
 

@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <section >
         服务页面
-    </div>
+    </section>
 </template>
 
 

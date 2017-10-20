@@ -7,7 +7,6 @@
             <ul>
                 <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index" @click="jump(index)">
                     {{item.menu}}
-                    <!-- <img v-if="index==5" src=""></img> -->
                 </li>
             </ul>
         </nav>
@@ -27,7 +26,8 @@ header {
     position: fixed;
     top: 0;
     z-index: 9999;
-    background: @color-background-nav;
+    background: transparent;
+    border-bottom: 1px solid #fff;
     .logo {
         position: fixed;
         top: 9px;
@@ -39,7 +39,7 @@ header {
             padding-right: 100px;
             >li {
                 float: left;
-                color: @font-color-base;
+                color: #fff;
                 height: 70px;
                 width: 110px;
                 box-sizing: border-box;
@@ -80,29 +80,17 @@ export default {
     data() {
         return {
             navList: [
-                { menu: '首页' },
-                { menu: '产品' },
-                { menu: '服务' },
-                { menu: '关于' },
-                { menu: '下载' },
-                { menu: '登录 / 注册' }
+                { menu: '全网搜索' },
+                { menu: '流程定制' },
+                { menu: '统计分析' },
+                { menu: '投后管理' },
+                { menu: '文档管理' },
+                { menu: '协同办公' },
+                { menu: '风险预警' }
             ]
         }
     },
     methods: {
-        jump(index) {
-            if (index == 0) {
-                this.$router.push({ name: 'home' });
-            } else if (index == 1) {
-                this.$router.push({ name: 'product' });
-            } else if (index == 2) {
-                this.$router.push({ name: 'service' });
-            } else if (index == 3) {
-                this.$router.push({ name: 'about' });
-            } else {
-                this.$router.push({ name: 'download' });
-            }
-        }
     }
 }
 </script>

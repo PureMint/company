@@ -1,5 +1,6 @@
 <template>
     <section class="home">
+        <v-header></v-header>
         <el-row>
             <el-col :span="24">
                 <div class="banner">
@@ -129,6 +130,7 @@
                 </div>
             </el-col>
         </el-row>
+        <v-footer></v-footer>
     </section>
 </template>
 
@@ -384,7 +386,7 @@
                 height: 241px;
                 margin-right: 30px;
                 cursor: pointer;
-                box-shadow: 8px 8px 5px #888;
+                box-shadow: 5px 5px 5px #888;
                 &:hover {
                     transform: scale(1.2);
                 }
@@ -396,6 +398,8 @@
 
 
 <script>
+import vHeader from '../components/header'
+import vFooter from '../components/footer'
 export default {
     data() {
         return {
@@ -405,7 +409,7 @@ export default {
             show4: false,
             List: [
                 {
-                    urlList: '/static/img/dingding.png'
+                    urlList: '/static/img/home/dingding.png'
                 },
                 {
                     urlList: '/static/img/home/dongfang.png'
@@ -414,6 +418,15 @@ export default {
                 }
             ]
         }
+    },
+    components: {
+        vHeader,
+        vFooter
     }
 }
 </script>
+
+
+<ul>
+
+</ul>

@@ -71,40 +71,48 @@
                         <p>周期化管控</p>
                     </div>
                     <div class="controlBox">
-                        <ul>
-                            <li>
-                                <div class="iconBox" style="text-align:right;">
-                                    <p style="font-size:20px;margin-bottom:16px">募</p>
-                                    <p style="font-size:18px;">LP协议签署 LP打款记录 基金备案</p>
+                        <div class="controlContent">
+                            <div>
+                                <div class="icon1" @mouseenter="show1=true" @mouseleave="show1=false">
                                 </div>
-                                <div class="icon1">
+                            </div>
+                            <div>
+                                <div class="icon2" @mouseenter="show2=true" @mouseleave="show2=false">
                                 </div>
-                            </li>
-                            <li>
-                                <div class="icon2">
+                            </div>
+                            <div>
+                                <div class="icon3" @mouseenter="show3=true" @mouseleave="show3=false">
                                 </div>
-                                <div class="iconBox" style="text-align:left;">
-                                    <p style="font-size:20px;margin-bottom:16px">投</p>
-                                    <p style="font-size:18px;">云项目池 考察储备 立项会 项目DD</p>
+                            </div>
+                            <div>
+                                <div class="icon4" @mouseenter="show4=true" @mouseleave="show4=false">
                                 </div>
-                            </li>
-                            <li>
-                                <div class="iconBox" style="text-align:right;">
-                                    <p style="font-size:20px;margin-bottom:16px">管</p>
-                                    <p style="font-size:18px;">投后管理 基金运算</p>
-                                </div>
-                                <div class="icon3">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon4">
-                                </div>
-                                <div class="iconBox" style="text-align:left;">
-                                    <p style="font-size:20px;margin-bottom:16px">退</p>
-                                    <p style="font-size:18px;">项目退出 LP收益分配 项目分红</p>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutLeft">
+                            <div class="iconBox iconMu" v-show="show1" style="text-align:right;">
+                                <p style="font-size:20px;margin-bottom:16px">募</p>
+                                <p style="font-size:18px;">LP协议签署 LP打款记录 基金备案</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
+                            <div class="iconBox iconTou" v-show="show2" style="text-align:left;">
+                                <p style="font-size:20px;margin-bottom:16px">投</p>
+                                <p style="font-size:18px;">云项目池 考察储备 立项会 项目DD</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutLeft">
+                            <div class="iconBox iconGuan" v-show="show3" style="text-align:right;">
+                                <p style="font-size:20px;margin-bottom:16px">管</p>
+                                <p style="font-size:18px;">投后管理 基金运算</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
+                            <div class="iconBox iconExit" v-show="show4" style="text-align:left;">
+                                <p style="font-size:20px;margin-bottom:16px">退</p>
+                                <p style="font-size:18px;">项目退出 LP收益分配 项目分红</p>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </el-col>
@@ -115,7 +123,7 @@
                     </div>
                     <div class="displayBox">
                         <div v-for="(item,index) in List" :key="item.index">
-                            <img src="item.urlList" class="img-responsive"></img>
+                            <img :src="item.urlList" class="img-responsive"></img>
                         </div>
                     </div>
                 </div>
@@ -283,15 +291,10 @@
             }
         }
         .controlBox {
-            // position: absolute;
-            // left: 50%; 
-            // transform: translate(-50%, -50%);
-            li {
-                display: flex;
-                align-items: center;
-                div:nth-child(2) {
-                    margin: 0 26px 47px 26px;
-                }
+            display: flex;
+            justify-content: center;
+            .controlContent div {
+                margin: 0 26px 47px 26px;
                 .icon1 {
                     width: 75px;
                     height: 75px;
@@ -328,17 +331,36 @@
                         background: url(../../static/img/home/exitIcon-1.png) no-repeat;
                     }
                 }
-                .iconBox {
-                    width: 424px;
-                    height: 80px;
-                    padding: 14px 26px;
-                    background: @color-fill;
-                    border: 1px solid @color-h-background;
-                    border-radius: 20px;
-                    p {
-                        color: @font-color-widget;
-                    }
+            }
+            .iconBox {
+                width: 424px;
+                height: 60px;
+                padding: 14px 26px;
+                background: @color-fill;
+                border: 1px solid @color-h-background;
+                border-radius: 20px;
+                p {
+                    color: @font-color-widget;
                 }
+            }
+            .iconMu {
+                position: absolute;
+                left: 14%;
+            }
+            .iconTou {
+                position: absolute;
+                bottom: 54%;
+                right: 14%;
+            }
+            .iconGuan {
+                position: absolute;
+                top: 52%;
+                left: 14%;
+            }
+            .iconExit {
+                position: absolute;
+                bottom: 22%;
+                right: 14%;
             }
         }
     }
@@ -361,6 +383,11 @@
                 width: 360px;
                 height: 241px;
                 margin-right: 30px;
+                cursor: pointer;
+                box-shadow: 8px 8px 5px #888;
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
     }
@@ -372,9 +399,13 @@
 export default {
     data() {
         return {
+            show1: false,
+            show2: false,
+            show3: false,
+            show4: false,
             List: [
                 {
-                    urlList: '/static/img/home/dingding.png'
+                    urlList: '/static/img/dingding.png'
                 },
                 {
                     urlList: '/static/img/home/dongfang.png'

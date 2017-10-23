@@ -26,15 +26,20 @@
               </div>
               <el-row style="overflow: hidden">
                 <el-col :span="16" style="flex-direction: column;display:flex">
-                  <div></div>
-                  <img src="../../static/img/service/secondary.png" class="img-responsive" style="flex-direction: column" alt="">
-                  <div class="shade"></div>
-                  <img src="../../static/img/service/train.png" class="img-responsive" style="flex-direction: column" alt="">
-                  <div class=""></div>
+
+                  <div  class="tb_mask" data-text="教育行业1111111111111111111111111111111">
+                    <img src="../../static/img/service/secondary.png" class="img-responsive" style="flex-direction: column" alt="">
+                  </div>
+
+                  <div  class="bt_mask" data-text="教育行业">
+                    <img src="../../static/img/service/train.png" class="img-responsive" style="flex-direction: column" alt="">
+                  </div>
                 </el-col>
+
                 <el-col :span="8">
-                  <img src="../../static/img/service/deploy.png" class="img-responsive" alt="">
-                  <div class=""></div>
+                  <div  class="rl_mask" data-text="教育行业">
+                    <img src="../../static/img/service/deploy.png" class="img-responsive" alt="">
+                  </div>
                 </el-col>
               </el-row>
             </el-col>
@@ -102,9 +107,9 @@
     font-family: "microsoft yahei";
     margin-top: 70px;
     .img-responsive {
-      display: inline-block;
+      display: block;
       height: auto;
-      max-width: 100%;
+      width:100%;
     }
     .banner {
       position: relative;
@@ -142,6 +147,73 @@
       }
     }
     .exploit {
+      /*从上到下遮罩*/
+      .tb_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .tb_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateY(-100%);
+        color: #FFF;
+      }
+      .tb_mask:hover:after {
+        transform: translateY(0);
+      }
+
+      /*从右向左遮罩*/
+      .rl_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .rl_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateX(100%);
+        color: #FFF;
+      }
+      .rl_mask:hover:after {
+        transform: translateX(0);
+      }
+
+      /*从下到上遮罩*/
+      .bt_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .bt_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateY(100%);
+        color: #FFF;
+      }
+      .bt_mask:hover:after {
+        transform: translateY(0);
+      }
+
+
       margin-bottom: 90px;
       overflow: hidden;
       .shade {

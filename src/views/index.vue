@@ -1,5 +1,6 @@
 <template>
     <section class="home">
+        <v-header></v-header>
         <el-row>
             <el-col :span="24">
                 <div class="banner">
@@ -10,7 +11,7 @@
                     </el-carousel>
                 </div>
             </el-col>
-            <el-col :span-="24">
+            <el-col :span="24">
                 <div class="special">
                     <p>系统特色</p>
                     <!-- <img src="/static/img/home/special-bg.png" class="img-responsive"></img> -->
@@ -65,11 +66,71 @@
                     </div>
                 </div>
             </el-col>
-            <el-col :span-="24">
+            <el-col :span="24">
                 <div class="control">
+                    <div class="title">
+                        <p>周期化管控</p>
+                    </div>
+                    <div class="controlBox">
+                        <div class="controlContent">
+                            <div>
+                                <div class="icon1" @mouseenter="show1=true" @mouseleave="show1=false">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="icon2" @mouseenter="show2=true" @mouseleave="show2=false">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="icon3" @mouseenter="show3=true" @mouseleave="show3=false">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="icon4" @mouseenter="show4=true" @mouseleave="show4=false">
+                                </div>
+                            </div>
+                        </div>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutLeft">
+                            <div class="iconBox iconMu" v-show="show1" style="text-align:right;">
+                                <p style="font-size:20px;margin-bottom:16px">募</p>
+                                <p style="font-size:18px;">LP协议签署 LP打款记录 基金备案</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
+                            <div class="iconBox iconTou" v-show="show2" style="text-align:left;">
+                                <p style="font-size:20px;margin-bottom:16px">投</p>
+                                <p style="font-size:18px;">云项目池 考察储备 立项会 项目DD</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutLeft">
+                            <div class="iconBox iconGuan" v-show="show3" style="text-align:right;">
+                                <p style="font-size:20px;margin-bottom:16px">管</p>
+                                <p style="font-size:18px;">投后管理 基金运算</p>
+                            </div>
+                        </transition>
+                        <transition name="fade" enter-active-class="animated bounce" leave-active-class="animated slideOutRight">
+                            <div class="iconBox iconExit" v-show="show4" style="text-align:left;">
+                                <p style="font-size:20px;margin-bottom:16px">退</p>
+                                <p style="font-size:18px;">项目退出 LP收益分配 项目分红</p>
+                            </div>
+                        </transition>
+                    </div>
+                </div>
+            </el-col>
+            <el-col :span="24">
+                <div class="display">
+                    <div class="title">
+                        <p>案例展示</p>
+                    </div>
+                    <div class="displayBox">
+                        <div v-for="(item,index) in List" :key="item.index">
+                            <img :src="item.urlList" class="img-responsive"></img>
+                        </div>
+                    </div>
                 </div>
             </el-col>
         </el-row>
+        <v-footer></v-footer>
     </section>
 </template>
 
@@ -110,123 +171,262 @@
                 }
             }
         }
-    }
-    .search {
-        width: 84px;
-        height: 84px;
-        top: 18%;
-        left: 24%;
-        background: url(../../static/img/home/search.png);
-        &:hover {
-            background: url(../../static/img/home/search-1.png);
+        .search {
+            width: 84px;
+            height: 84px;
+            top: 18%;
+            left: 24%;
+            background: url(../../static/img/home/search.png);
+            &:hover {
+                background: url(../../static/img/home/search-1.png);
+            }
+            div {
+                position: absolute;
+                top: 24%;
+                left: 128%;
+            }
         }
-        div {
-            position: absolute;
-            top: 24%;
-            left: 128%;
+        .analyse {
+            width: 64px;
+            height: 64px;
+            top: 66%;
+            left: 30%;
+            background: url(../../static/img/home/analyse.png);
+            &:hover {
+                background: url(../../static/img/home/analyse-1.png);
+            }
+            div {
+                position: absolute;
+                top: 24%;
+                left: -295%;
+            }
         }
-    }
-    .analyse {
-        width: 64px;
-        height: 64px;
-        top: 66%;
-        left: 30%;
-        background: url(../../static/img/home/analyse.png);
-        &:hover {
-            background: url(../../static/img/home/analyse-1.png);
+        .work {
+            width: 88px;
+            height: 88px;
+            top: 71%;
+            left: 48%;
+            background: url(../../static/img/home/work.png);
+            &:hover {
+                background: url(../../static/img/home/work-1.png);
+            }
+            div {
+                position: absolute;
+                top: 12%;
+                left: 115%;
+            }
         }
-        div {
-            position: absolute;
-            top: 24%;
-            left: -295%;
+        .manage {
+            width: 88px;
+            height: 88px;
+            top: 14%;
+            left: 63%;
+            background: url(../../static/img/home/manage.png);
+            &:hover {
+                background: url(../../static/img/home/manage-1.png);
+            }
+            div {
+                position: absolute;
+                top: 45%;
+                left: -210%;
+            }
         }
-    }
-    .work {
-        width: 88px;
-        height: 88px;
-        top: 71%;
-        left: 48%;
-        background: url(../../static/img/home/work.png);
-        &:hover {
-            background: url(../../static/img/home/work-1.png);
+        .file {
+            width: 64px;
+            height: 64px;
+            top: 37%;
+            left: 71%;
+            background: url(../../static/img/home/file.png);
+            &:hover {
+                background: url(../../static/img/home/file-1.png);
+            }
+            div {
+                position: absolute;
+                top: 165%;
+                left: -70%;
+            }
         }
-        div {
-            position: absolute;
-            top: 12%;
-            left: 115%;
+        .alarm {
+            width: 89px;
+            height: 89px;
+            top: 69%;
+            left: 68%;
+            background: url(../../static/img/home/alarm.png);
+            &:hover {
+                background: url(../../static/img/home/alarm-1.png);
+            }
+            div {
+                position: absolute;
+                top: 105%;
+                left: 7%;
+            }
         }
-    }
-    .manage {
-        width: 88px;
-        height: 88px;
-        top: 14%;
-        left: 63%;
-        background: url(../../static/img/home/manage.png);
-        &:hover {
-            background: url(../../static/img/home/manage-1.png);
-        }
-        div {
-            position: absolute;
-            top: 45%;
-            left: -210%;
-        }
-    }
-    .file {
-        width: 64px;
-        height: 64px;
-        top: 37%;
-        left: 71%;
-        background: url(../../static/img/home/file.png);
-        &:hover {
-            background: url(../../static/img/home/file-1.png);
-        }
-        div {
-            position: absolute;
-            top: 165%;
-            left: -70%;
-        }
-    }
-    .alarm {
-        width: 89px;
-        height: 89px;
-        top: 69%;
-        left: 68%;
-        background: url(../../static/img/home/alarm.png);
-        &:hover {
-            background: url(../../static/img/home/alarm-1.png);
-        }
-        div {
-            position: absolute;
-            top: 105%;
-            left: 7%;
-        }
-    }
-    .custom {
-        width: 67px;
-        height: 67px;
-        top: 42%;
-        left: 35%;
-        background: url(../../static/img/home/custom.png);
-        &:hover {
-            background: url(../../static/img/home/custom-1.png);
-        }
-        div {
-            position: absolute;
-            top: 24%;
-            left: 128%;
+        .custom {
+            width: 67px;
+            height: 67px;
+            top: 42%;
+            left: 35%;
+            background: url(../../static/img/home/custom.png);
+            &:hover {
+                background: url(../../static/img/home/custom-1.png);
+            }
+            div {
+                position: absolute;
+                top: 24%;
+                left: 128%;
+            }
         }
     }
     .control {
+        position: relative;
         height: 692px;
+        padding-top: 90px;
         background: url(../../static/img/home/control-bg.png) no-repeat;
         background-size: 100% 100%;
+        .title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            p {
+                font-size: 30px;
+                color: #fff;
+            }
+        }
+        .controlBox {
+            display: flex;
+            justify-content: center;
+            .controlContent div {
+                margin: 0 26px 47px 26px;
+                .icon1 {
+                    width: 75px;
+                    height: 75px;
+                    background: url(../../static/img/home/muIcon.png) no-repeat;
+                    &:hover {
+                        cursor: pointer;
+                        background: url(../../static/img/home/muIcon-1.png) no-repeat;
+                    }
+                }
+                .icon2 {
+                    width: 75px;
+                    height: 75px;
+                    background: url(../../static/img/home/touIcon.png) no-repeat;
+                    &:hover {
+                        cursor: pointer;
+                        background: url(../../static/img/home/touIcon-1.png) no-repeat;
+                    }
+                }
+                .icon3 {
+                    width: 75px;
+                    height: 75px;
+                    background: url(../../static/img/home/guanIcon.png) no-repeat;
+                    &:hover {
+                        cursor: pointer;
+                        background: url(../../static/img/home/guanIcon-1.png) no-repeat;
+                    }
+                }
+                .icon4 {
+                    width: 75px;
+                    height: 75px;
+                    background: url(../../static/img/home/exitIcon.png) no-repeat;
+                    &:hover {
+                        cursor: pointer;
+                        background: url(../../static/img/home/exitIcon-1.png) no-repeat;
+                    }
+                }
+            }
+            .iconBox {
+                width: 424px;
+                height: 60px;
+                padding: 14px 26px;
+                background: @color-fill;
+                border: 1px solid @color-h-background;
+                border-radius: 20px;
+                p {
+                    color: @font-color-widget;
+                }
+            }
+            .iconMu {
+                position: absolute;
+                left: 14%;
+            }
+            .iconTou {
+                position: absolute;
+                bottom: 54%;
+                right: 14%;
+            }
+            .iconGuan {
+                position: absolute;
+                top: 52%;
+                left: 14%;
+            }
+            .iconExit {
+                position: absolute;
+                bottom: 22%;
+                right: 14%;
+            }
+        }
+    }
+    .display {
+        height: 530px;
+        padding: 90px 0 84px 0;
+        .title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            p {
+                font-size: 30px;
+                color: #2a3142;
+            }
+        }
+        .displayBox {
+            display: flex;
+            justify-content: center;
+            >div {
+                width: 360px;
+                height: 241px;
+                margin-right: 30px;
+                cursor: pointer;
+                box-shadow: 5px 5px 5px #888;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
 }
 </style>
 
 
 <script>
+import vHeader from '../components/header'
+import vFooter from '../components/footer'
 export default {
-
+    data() {
+        return {
+            show1: false,
+            show2: false,
+            show3: false,
+            show4: false,
+            List: [
+                {
+                    urlList: '/static/img/home/dingding.png'
+                },
+                {
+                    urlList: '/static/img/home/dongfang.png'
+                }, {
+                    urlList: '/static/img/home/didi.png'
+                }
+            ]
+        }
+    },
+    components: {
+        vHeader,
+        vFooter
+    }
 }
 </script>
+
+
+<ul>
+
+</ul>

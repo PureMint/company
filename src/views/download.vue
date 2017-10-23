@@ -1,9 +1,17 @@
 <template>
   <section class="download">
+    <v-header></v-header>
+    <!-- <el-row>
+                <el-col :span="24">
+                  <div class="banner"> -->
+    <!-- <img src="../../static/img/download/banner.png" class="img-responsive" alt="" /> -->
+    <!-- </div>
+                </el-col>
+              </el-row> -->
     <el-row>
       <el-col :span="24">
         <div class="banner">
-          <img src="../../static/img/download/Dbanner-.png" class="img-responsive" alt=""/>
+          <img src="../../static/img/download/Dbanner-.png" class="img-responsive" alt="" />
         </div>
         <div class="app">
           <img src="../../static/img/download/official.png" class="img-responsive" alt="">
@@ -31,23 +39,23 @@
                   </ul>
                 </el-col>
                 <el-col :span="4">
-                  <ul >
+                  <ul>
                     <li v-for="(product,index) in productList" :key="product.index"> {{ product.li }} </li>
                   </ul>
                 </el-col>
                 <el-col :span="4">
                   <ul>
-                    <li  v-for="(service,index) in serviceList" :key="service.index"> {{ service.li }} </li>
+                    <li v-for="(service,index) in serviceList" :key="service.index"> {{ service.li }} </li>
                   </ul>
                 </el-col>
                 <el-col :span="4">
                   <ul>
-                    <li  v-for="(about,index) in aboutList" :key="about.index"> {{ about.li }} </li>
+                    <li v-for="(about,index) in aboutList" :key="about.index"> {{ about.li }} </li>
                   </ul>
                 </el-col>
                 <el-col :span="4">
                   <ul>
-                    <li  v-for="(download,index) in downloadList" :key="download.index"> {{ download.li }} </li>
+                    <li v-for="(download,index) in downloadList" :key="download.index"> {{ download.li }} </li>
                     <li>
                       <img src="../../static/img/download/qr_code.png" alt="">
                     </li>
@@ -65,11 +73,24 @@
         </div>
       </el-col>
     </el-row>
+    <v-footer></v-footer>
   </section>
 </template>
 
-
 <style lang="less" scoped>
+  // .download {
+  //   margin-top: 70px;
+  //   .banner {
+  //     height: 799px;
+  //     background: url(../../static/img/download/banner.png) no-repeat;
+  //     background-size: 100% 100%;
+  //   }
+  //   .img-responsive {
+  //     display: inline-block;
+  //     height: 100%;
+  //     max-width: 100%;
+  //   }
+  // }
   .download {
     margin-top: 70px;
     .clear {
@@ -108,12 +129,12 @@
         text-align: center;
         margin-bottom: 50px;
       }
-      ul{
+      ul {
         float: left;
-        li:first-child{
+        li:first-child {
           margin-bottom: 30px;
         }
-        li{
+        li {
           color: #fff;
           font-size: 17px;
           margin-bottom: 10px;
@@ -123,55 +144,60 @@
         }
       }
     }
-
   }
 </style>
 
 <script>
+  import vHeader from '../components/header'
+  import vFooter from '../components/footer'
   export default {
     data() {
       return {
         homeList: [
-          {li: '首页'},
-          {li: '系统特色'},
-          {li: '周期化管控'},
-          {li: '联系我们'}
+          { li: '首页' },
+          { li: '系统特色' },
+          { li: '周期化管控' },
+          { li: '联系我们' }
         ],
         productList: [
-          {li: '产品'},
-          {li: '全网搜索'},
-          {li: '流程定制'},
-          {li: '统计分析'},
-          {li: '投后管理'},
-          {li: '文档管理'},
-          {li: '协同办公'},
-          {li: '风险预警'}
+          { li: '产品' },
+          { li: '全网搜索' },
+          { li: '流程定制' },
+          { li: '统计分析' },
+          { li: '投后管理' },
+          { li: '文档管理' },
+          { li: '协同办公' },
+          { li: '风险预警' }
 
         ],
         serviceList: [
-          {li:'服务'},
-          {li: '首页'},
-          {li: '系统特色'},
-          {li: '周期化管控'},
-          {li: '联系我们'}
+          { li: '服务' },
+          { li: '首页' },
+          { li: '系统特色' },
+          { li: '周期化管控' },
+          { li: '联系我们' }
         ],
-        aboutList:[
-          {li:'关于'},
-          {li: '系统特色'},
-          {li: '周期化管控'},
-          {li: '联系我们'}
+        aboutList: [
+          { li: '关于' },
+          { li: '系统特色' },
+          { li: '周期化管控' },
+          { li: '联系我们' }
         ],
-        downloadList:[
-          {li:'下载'}
+        downloadList: [
+          { li: '下载' }
         ],
-        addressList:[
-          {li:'公司：陕西深度网路有限公司'},
-          {li:'地址：陕西省西安市高新区高新二路、12号协同大厦1层G1-10'},
-          {li:'热线：029-86687710'},
-          {li:'官方网址：www.sdcto.cn'},
-          {li:'工作时间：09:00-18:00(周一至周五)'}
+        addressList: [
+          { li: '公司：陕西深度网路有限公司' },
+          { li: '地址：陕西省西安市高新区高新二路、12号协同大厦1层G1-10' },
+          { li: '热线：029-86687710' },
+          { li: '官方网址：www.sdcto.cn' },
+          { li: '工作时间：09:00-18:00(周一至周五)' }
         ]
       }
+    },
+    components: {
+      vHeader,
+      vFooter
     }
   }
 </script>

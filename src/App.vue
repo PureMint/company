@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <!-- <v-header></v-header> -->
     <router-view></router-view>
-    <v-footer></v-footer>
+    <!-- <v-footer></v-footer> -->
   </div>
 </template>
 
 <script>
-import vHeader from '../src/components/header'
-import vFooter from '../src/components/footer'
+// import vHeader from '../src/components/header'
+// import vFooter from '../src/components/footer'
 export default {
   name: 'app',
-  components: {
-    vHeader,
-    vFooter
-  }
+  // components: {
+  //   vHeader,
+  //   vFooter
+  // }
 }
 </script>
 

@@ -56,6 +56,9 @@
     .searchBox {
       height: 903px;
     }
+    .searchText {
+      
+    }
   }
   .custom {
     height: 1080px;

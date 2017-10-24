@@ -11,13 +11,13 @@
     <el-row>
       <el-col :span="24">
         <div class="banner">
-          <img src="../../static/img/download/Dbanner-.png" class="img-responsive" alt="" />
+          <img src="../../static/img/download/banner.png" class="img-responsive" alt="" />
         </div>
         <div class="app">
           <img src="../../static/img/download/official.png" class="img-responsive" alt="">
           <el-row :gutter="20">
             <el-col :span="14" class="ios">
-              <img src="../../static/img/download/ios.png" class="img-responsive" alt="">
+              <img src="../../static/img/download/ios.png" class="img-responsive" style="padding-bottom:15px" alt="">
               <img src="../../static/img/download/android.png" class="img-responsive" alt="">
             </el-col>
             <el-col :span="10">

@@ -26,15 +26,20 @@
               </div>
               <el-row style="overflow: hidden">
                 <el-col :span="16" style="flex-direction: column;display:flex">
-                  <div></div>
-                  <img src="../../static/img/service/secondary.png" class="img-responsive" style="flex-direction: column" alt="">
-                  <div class="shade"></div>
-                  <img src="../../static/img/service/train.png" class="img-responsive" style="flex-direction: column" alt="">
-                  <div class=""></div>
+
+                  <div  class="tb_mask" data-text="教育行业1111111111111111111111111111111">
+                    <img src="../../static/img/service/secondary.png" class="img-responsive" style="flex-direction: column" alt="">
+                  </div>
+
+                  <div  class="bt_mask" data-text="教育行业">
+                    <img src="../../static/img/service/train.png" class="img-responsive" style="flex-direction: column" alt="">
+                  </div>
                 </el-col>
+
                 <el-col :span="8">
-                  <img src="../../static/img/service/deploy.png" class="img-responsive" alt="">
-                  <div class=""></div>
+                  <div  class="rl_mask" data-text="教育行业">
+                    <img src="../../static/img/service/deploy.png" class="img-responsive" alt="">
+                  </div>
                 </el-col>
               </el-row>
             </el-col>
@@ -95,140 +100,24 @@
   </section>
 </template>
 
-
 <style lang="less" scoped>
-@import '../common/css/variable.less';
+  @import '../common/css/variable.less';
 
-.service {
-  font-family: "microsoft yahei";
-  margin-top: 70px;
-  .img-responsive {
-    display: inline-block;
-    height: auto;
-    max-width: 100%;
-  }
-  .banner {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 90px;
-  }
-  img {
-    position: relative;
-  }
-  .half-mask {
-    /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 50%;
-    transition: right 200ms;
-    padding-right: 48px;
-    text-align: right;
-  }
-  div.half-mask:hover {
-    padding-right: 48px;
-    text-align: right;
-    right: 0;
-  }
-  .text {
-    color: #fff;
-    padding-left: 80%;
-    padding-top: 136px;
-    >h3 {
-      padding-bottom: 5px;
-      border-bottom: 5px solid #f00;
-      margin-bottom: 50px;
+  .service {
+    font-family: "microsoft yahei";
+    margin-top: 70px;
+    .img-responsive {
+      display: block;
+      height: auto;
+      width:100%;
     }
-  }
-  .exploit {
-    margin-bottom: 90px;
-    overflow: hidden;
-    .shade {
-      /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/
-      z-index: 100;
-      background-color: rgba(0, 0, 0, 0.5);
-      height: 50%;
-      width: 67%;
-      position: absolute;
-      top: -40%;
-      left: 0;
-      transition: top 200ms;
-    }
-    .shade:hover {
-      top: 0;
-    }
-    >p {
-      font-size: 30px;
-      color: @font-color-title;
-      text-align: center;
-      margin-bottom: 90px;
-      transition: all 0.15s linear;
-    }
-    p:hover {
-      padding-left: 5%;
-    }
-    >.row>p {
-      font-size: 30px;
-      color: @font-color-title;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-  }
-  .customization {
-    margin-bottom: 90px;
-    img {
-      transition: all 0.3s linear;
-    }
-    img:hover {
-      transform: scale(1.1);
-    }
-    .custom-made {
-      width: 524px;
-      height: 312px;
+    .banner {
       position: relative;
       overflow: hidden;
+      margin-bottom: 90px;
     }
-    .custom-text {
-      width: 262px;
-      height: 156px;
-      position: absolute;
-      top: 25%;
-      left: 25%;
-      color: #fff;
-      font-size: 20px;
-      padding-top: 10%;
-      p {
-        transition: all 0.15s linear;
-      }
-      p:hover {
-        padding-right: 5%;
-      }
-    }
-  }
-  .after {
-    height: 600px;
-    overflow: hidden;
-    position: relative;
-    .serve {
-      position: absolute;
-      left: 25%;
-      top: 20%;
-      text-align: right;
-      width: 400px;
-      h1 {
-        transition: all 0.15s linear;
-      }
-      h1:hover {
-        padding-right: 5%;
-      }
-      p {
-        transition: all 0.15s linear;
-      }
-      p:hover {
-        padding-right: 5%;
-      }
+    img {
+      position: relative;
     }
     .half-mask {
       /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/
@@ -237,39 +126,221 @@
       width: 100%;
       position: absolute;
       top: 0;
-      left: 50%;
-      transition: left 200ms;
+      right: 50%;
+      transition: right 200ms;
       padding-right: 48px;
-      text-align: left;
+      text-align: right;
     }
     div.half-mask:hover {
-      text-align: left;
-      left: 0;
+      padding-right: 48px;
+      text-align: right;
+      right: 0;
     }
-    .warranty {
-      padding-right: 80%;
-      padding-top: 136px;
+    .text {
       color: #fff;
-      padding-left: 46px;
+      padding-left: 80%;
+      padding-top: 136px;
       >h3 {
-        margin-bottom: 42px;
+        padding-bottom: 5px;
+        border-bottom: 5px solid #f00;
+        margin-bottom: 50px;
+      }
+    }
+    .exploit {
+      /*从上到下遮罩*/
+      .tb_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .tb_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateY(-100%);
+        color: #FFF;
+      }
+      .tb_mask:hover:after {
+        transform: translateY(0);
+      }
+
+      /*从右向左遮罩*/
+      .rl_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .rl_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateX(100%);
+        color: #FFF;
+      }
+      .rl_mask:hover:after {
+        transform: translateX(0);
+      }
+
+      /*从下到上遮罩*/
+      .bt_mask {
+        position: relative;
+        overflow: hidden;
+      }
+      .bt_mask:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*display: block;*/
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: attr(data-text);
+        transition: all 1s ease;
+        transform: translateY(100%);
+        color: #FFF;
+      }
+      .bt_mask:hover:after {
+        transform: translateY(0);
+      }
+
+
+      margin-bottom: 90px;
+      overflow: hidden;
+      .shade {
+        /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 50%;
+        width: 67%;
+        position: absolute;
+        top: -40%;
+        left: 0;
+        transition: top 200ms;
+      }
+      .shade:hover {
+        top: 0;
       }
       >p {
-        margin-bottom: 49px;
+        font-size: 30px;
+        color: @font-color-title;
+        text-align: center;
+        margin-bottom: 90px;
+        transition: all 0.15s linear;
+      }
+      p:hover {
+        padding-left: 5%;
+      }
+      >.row>p {
+        font-size: 30px;
+        color: @font-color-title;
+        text-align: left;
+        margin-bottom: 30px;
+      }
+    }
+    .customization {
+      margin-bottom: 90px;
+      img {
+        transition: all 0.3s linear;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+      .custom-made {
+        width: 524px;
+        height: 312px;
+        position: relative;
+        overflow: hidden;
+      }
+      .custom-text {
+        width: 262px;
+        height: 156px;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        color: #fff;
+        font-size: 20px;
+        padding-top: 10%;
+        p {
+          transition: all 0.15s linear;
+        }
+        p:hover {
+          padding-right: 5%;
+        }
+      }
+    }
+    .after {
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+      .serve {
+        position: absolute;
+        left: 25%;
+        top: 20%;
+        text-align: right;
+        width: 400px;
+        h1 {
+          transition: all 0.15s linear;
+        }
+        h1:hover {
+          padding-right: 5%;
+        }
+        p {
+          transition: all 0.15s linear;
+        }
+        p:hover {
+          padding-right: 5%;
+        }
+      }
+      .half-mask {
+        /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transition: left 200ms;
+        padding-right: 48px;
+        text-align: left;
+      }
+      div.half-mask:hover {
+        text-align: left;
+        left: 0;
+      }
+      .warranty {
+        padding-right: 80%;
+        padding-top: 136px;
+        color: #fff;
+        padding-left: 46px;
+        >h3 {
+          margin-bottom: 42px;
+        }
+        >p {
+          margin-bottom: 49px;
+        }
       }
     }
   }
-}
 </style>
 
 
 <script>
-import vHeader from '../components/header'
-import vFooter from '../components/footer'
-export default {
-  components: {
-    vHeader,
-    vFooter
+  import vHeader from '../components/header'
+  import vFooter from '../components/footer'
+  export default {
+    components: {
+      vHeader,
+      vFooter
+    }
   }
-}
 </script>

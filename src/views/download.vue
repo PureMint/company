@@ -17,7 +17,7 @@
           <img src="../../static/img/download/official.png" class="img-responsive" alt="">
           <el-row :gutter="20">
             <el-col :span="14" class="ios">
-              <img src="../../static/img/download/ios.png" class="img-responsive" style="padding-bottom:15px" alt="">
+              <img src="../../static/img/download/ios.png" class="img-responsive" alt="">
               <img src="../../static/img/download/android.png" class="img-responsive" alt="">
             </el-col>
             <el-col :span="10">
@@ -78,21 +78,9 @@
 </template>
 
 <style lang="less" scoped>
-  // .download {
-  //   margin-top: 70px;
-  //   .banner {
-  //     height: 799px;
-  //     background: url(../../static/img/download/banner.png) no-repeat;
-  //     background-size: 100% 100%;
-  //   }
-  //   .img-responsive {
-  //     display: inline-block;
-  //     height: 100%;
-  //     max-width: 100%;
-  //   }
-  // }
   .download {
     margin-top: 70px;
+    min-width: 1360px;
     .clear {
       clear: both;
     }
@@ -111,6 +99,9 @@
       width: 25%;
       img {
         margin-bottom: 20px;
+      }
+      .ios img:nth-child(1)  {
+         margin-bottom: 35px;
       }
     }
     .map {

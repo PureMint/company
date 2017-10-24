@@ -1,12 +1,12 @@
 <template>
     <header class="navbar">
         <div class="logo">
-            <img src="/static/img/logo.png" alt="领投者" class="img-responsive"/>
+            <img src="/static/img/logo.png" alt="领投者" class="img-responsive" />
         </div>
         <nav class="menu">
             <ul>
-                <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index" @click="jump(index)">
-                    {{item.menu}}
+                <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index">
+                    <a style="color:#fff" href="javascript:void(0)" @click="goAnchor(item.index)">{{item.menu}}</a>
                 </li>
             </ul>
         </nav>
@@ -20,13 +20,14 @@ body {
     width: 100%;
     position: relative;
 }
+
 header {
     width: 100%;
     height: 70px;
     position: fixed;
     top: 0;
-    z-index: 9999;
-    background: transparent;
+    z-index: 9999; // background: transparent;
+    background: #19a7b5;
     border-bottom: 1px solid #fff;
     .logo {
         position: fixed;
@@ -49,7 +50,10 @@ header {
                 &:hover {
                     background: rgba(225, 225, 225, 0.15);
                     border-bottom: 2px solid @color-border;
-                    color: @color-border;
+                    // color: @color-border;
+                }
+                a:hover {
+                     color: @color-border;
                 }
             }
         }
@@ -91,6 +95,30 @@ export default {
         }
     },
     methods: {
+        goAnchor(index) {
+            if (index == 0) {
+                var anchor =  document.getElementById('#search')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 1) {
+                var anchor = document.getElementById('#custom')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 2) {
+                var anchor =  document.getElementById('#analyse')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 3) {
+                var anchor =  document.getElementById('#manage')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 4) {
+                var anchor =  document.getElementById('#file')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 5) {
+                var anchor =  document.getElementById('#work')
+                document.body.scrollTop = anchor.offsetTop;
+            } else if (index == 6) {
+                var anchor =  document.getElementById('#alarm')
+                document.body.scrollTop = anchor.offsetTop;
+            } 
+        }
     }
 }
 </script>

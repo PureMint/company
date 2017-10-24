@@ -20,5 +20,6 @@ export default {
 
 <style lang="less">
 @import '../static/css/normalize.less';
+@import '../static/css/el-style.css';
 
 </style>

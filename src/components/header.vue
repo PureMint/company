@@ -1,7 +1,7 @@
 <template>
     <header class="navbar">
         <div class="logo">
-            <img src="/static/img/logo.png" alt="领投者" class="img-responsive"/>
+            <img src="/static/img/logo.png" alt="领投者" class="img-responsive" />
         </div>
         <nav class="menu">
             <ul>
@@ -9,6 +9,7 @@
                     {{item.menu}}
                     <!-- <img v-if="index==5" src=""></img> -->
                 </li>
+                <!-- <li><i class="el-icon-menu"></i></li> -->
             </ul>
         </nav>
     </header>
@@ -21,6 +22,7 @@ body {
     width: 100%;
     position: relative;
 }
+
 header {
     width: 100%;
     height: 70px;
@@ -28,12 +30,21 @@ header {
     top: 0;
     z-index: 9999;
     background: @color-background-nav;
+    // &:after {
+    //     display: block;
+    //     content: '';
+    //     clear: both;
+    //     height: 0;
+    // }
     .logo {
         position: fixed;
         top: 9px;
         left: 50px;
     }
-    @media screen and (min-width:1080px) {
+    .menu {
+        // width: 660px;
+        // height: 70px;
+        overflow: hidden;
         ul {
             float: right;
             padding-right: 100px;
@@ -54,23 +65,23 @@ header {
             }
         }
     }
-    @media screen and (max-width:1080px) {
-        ul {
-            display: none; // float: right;
-            // padding-right: 100px;
-            >li {
-                color: #fff;
-                height: 70px;
-                width: 110px;
-                text-align: center;
-                line-height: 70px;
-                cursor: pointer;
-                &:hover {
-                    background: rgba(225, 225, 225, 0.15);
-                }
-            }
-        }
-    }
+    // @media screen and (max-width:1080px) {
+    //     ul {
+    //         float: right;
+    //         padding: 20px 10px 0 0;
+    //         >li {
+    //             color: #fff;
+    //             height: 20px;
+    //             line-height: 20px;
+    //             margin-bottom: 10px;
+    //             text-align: center;
+    //             cursor: pointer;
+    //             &:hover {
+    //                 background: rgba(225, 225, 225, 0.15);
+    //             }
+    //         }
+    //     }
+    // }
 }
 </style>
 

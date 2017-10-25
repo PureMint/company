@@ -37,6 +37,7 @@ header {
     @media screen and (min-width:1080px) {
         ul {
             float: right;
+            // width: 870px;
             padding-right: 100px;
             >li {
                 float: left;

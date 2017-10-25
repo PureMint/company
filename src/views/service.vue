@@ -64,7 +64,7 @@
                                 </span>
               </div>
               <el-row :gutter="20" style="display:  flex;  flex-direction:  row  ;flex-wrap:  nowrap">
-                <el-col :span="12" class="custom-made">
+                <el-col :span="12" class="custom-made  animated fadeInRight">
                   <img src="../../static/img/service/customization1.png" class="img-responsive"
                        alt="">
                   <div class="custom-text">
@@ -73,7 +73,7 @@
                  </p>
                   </div>
                 </el-col>
-                <el-col :span="6" :offset="5" class="custom-made">
+                <el-col :span="6" :offset="5" class="custom-made animated fadeInLeft">
                   <img src="../../static/img/service/customization2.png" class="img-responsive"
                        alt="">
                   <div class="custom-text">

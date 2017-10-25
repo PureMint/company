@@ -8,7 +8,7 @@
           <div :class="{actives: isActive}">
             <img src="../../static/img/about/about-us.png" alt="">
             <p style="width:125px;font-size:30px;color:#fff;font-family:'MicrosoftYaHei';padding-bottom:4px;margin-bottom:100px;border-bottom:4px solid #F05E5E;">关于我们</p>
-            <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;" class="animated  fadeInLeft">
+            <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;line-height:30px" class="animated  fadeInLeft">
               领投者拥有一支技术精湛的专业运维服务队伍，具备陷阱的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制
             </p>
           </div>
@@ -23,7 +23,8 @@
     <el-row class="join" :gutter="40">
       <div>
         <el-col class="welImg" :span="5" v-for="(item,index) in welImg" :key="item.index">
-          <div @mouseleave="welLeave(item,index)" @mouseover="welHover(item,index)">
+          <!-- <div @mouseleave="welLeave(item,index)" @mouseover="welHover(item,index)"> -->
+          <div>
             <img :src="item.src" class="srcha">
             <div :class="item.welImg_posi"></div>
             <span class="span" v-show="index == 1">我们的休息室</span>
@@ -54,32 +55,32 @@
       <el-col :span="6" :offset="4" class="">
         <img src="static/img/about/left.svg" alt="" />
         <img src="static/img/about/right.svg" alt="" />
-        <el-tabs  v-model="activeName2" type="card" @tab-click="handleClick">
+        <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
           <el-tab-pane label="财务员" name="first">
             <div class="tabPosi">
               <div v-for="(item,index) in tabContent" :key="item.index">
-                <span>{{item.text}}</span>
+                <p>{{item.text}}</p>
               </div>
             </div>
           </el-tab-pane>
           <el-tab-pane label="客 服" name="second">
             <div class="tabPosi">
               <div v-for="(item,index) in tabContent" :key="item.index">
-                <span>{{item.text}}</span>
+                <p>{{item.text}}</p>
               </div>
             </div>
           </el-tab-pane>
           <el-tab-pane label="UI设计" name="third">
             <div class="tabPosi">
               <div v-for="(item,index) in tabContent" :key="item.index">
-                <span>{{item.text}}</span>
+                <p>{{item.text}}</p>
               </div>
             </div>
           </el-tab-pane>
           <el-tab-pane label="程序员" name="fourth">
             <div class="tabPosi">
               <div v-for="(item,index) in tabContent" :key="item.index">
-                <span>{{item.text}}</span>
+                <p>{{item.text}}</p>
               </div>
             </div>
           </el-tab-pane>
@@ -146,6 +147,7 @@
     }
   }
 }
+
 .welcom {
   width: 100%;
   height: 30px;
@@ -169,6 +171,10 @@
       }
       >div {
         overflow: hidden;
+        img:hover {
+          transition: all 1s ease;
+          transform: scale(1.1);
+        }
       }
     }
     .welImg_posi1 {
@@ -264,15 +270,16 @@
         margin: 39px 0 0 -40px;
       }
       .color-s {
-        color:#41578c;
+        color: #41578c;
       }
       .color-t {
-        color:#9aa9ca;
+        color: #9aa9ca;
       }
       >div:nth-child(3) {
         width: 195px;
         font-size: 14px;
         margin: 25px 0 90px -40px;
+        line-height: 20px;
       }
     }
   }
@@ -323,6 +330,7 @@
   }
   .elTabs {}
 }
+
 .tabPosi {
   margin-top: 18px;
   background: #f2f4f8; // width: 100%;
@@ -330,8 +338,9 @@
   padding: 52px 48px;
   >div {
     margin: 10px 0;
-    span {
+    p {
       font-size: 14px;
+      line-height: 20px;
     }
   }
 }
@@ -406,7 +415,7 @@ export default {
       welImg_posi1_1: "welImg_posi1_1",
       welImg_posi2_2: "welImg_posi2_2",
       welImg_posi3_3: "welImg_posi3_3",
-      isActive: true  ,
+      isActive: true,
       welcomJ: "欢迎你的加入",
       welImg: [
         {

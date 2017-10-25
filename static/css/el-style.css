@@ -21,3 +21,11 @@
     position: relative;
     margin: 0 0 14px;
 }
+.el-input__inner {
+  width: 206px;
+  height: 30px;
+  line-height: 1;
+  outline: 0;
+  padding: 3px 10px;
+  transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}

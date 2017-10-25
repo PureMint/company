@@ -404,6 +404,9 @@
 import vHeader from '../components/header'
 import vFooter from '../components/footer'
 export default {
+    created() {
+        this.goTop();
+    },
     data() {
         return {
             List: [
@@ -416,6 +419,11 @@ export default {
                     urlList: '/static/img/home/didi.png'
                 }
             ]
+        }
+    },
+    methods: {
+        goTop() {
+           document.body.scrollTop = 0; 
         }
     },
     components: {

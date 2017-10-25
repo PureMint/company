@@ -78,21 +78,9 @@
 </template>
 
 <style lang="less" scoped>
-  // .download {
-  //   margin-top: 70px;
-  //   .banner {
-  //     height: 799px;
-  //     background: url(../../static/img/download/banner.png) no-repeat;
-  //     background-size: 100% 100%;
-  //   }
-  //   .img-responsive {
-  //     display: inline-block;
-  //     height: 100%;
-  //     max-width: 100%;
-  //   }
-  // }
   .download {
     margin-top: 70px;
+    min-width: 1360px;
     .clear {
       clear: both;
     }

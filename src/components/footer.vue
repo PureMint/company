@@ -98,7 +98,8 @@
     bottom: 0;
     background: #2A3142;
     overflow: hidden;
-    min-width: 660px;
+    min-width: 1630px;
+    left: 0;
     .footer-main {
       height: 80px;
       line-height: 80px;

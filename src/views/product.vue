@@ -123,125 +123,125 @@
 
 
 <style lang="less" scoped>
-.product {
-  margin-top: 70px;
-  min-width: 1360px;
-  .search {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
-  }
-  .custom {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/custom-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .analyse {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/analyse-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .manage {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/manage-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .file {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/file-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .work {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/work-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .alarm {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/alarm-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .contentBox {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -560px;
-    margin-top: -452px;
-    width: 1120px;
-    height: 903px;
-  }
-  .text {
-    width: 310px;
-    height: 340px;
-    position: absolute;
-    background: rgba(255, 255, 255, .4);
-    padding: 50px 45px;
-    color: #00727d;
-    box-sizing: border-box;
-    p {
-      font-size: 36px;
+  .product {
+    margin-top: 70px;
+    min-width: 1360px;
+    .search {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
     }
-    div {
-      font-size: 24px;
+    .custom {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/custom-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .analyse {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/analyse-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .manage {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/manage-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .file {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/file-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .work {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/work-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .alarm {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/alarm-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .contentBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -560px;
+      margin-top: -452px;
+      width: 1120px;
+      height: 903px;
+    }
+    .text {
+      width: 310px;
+      height: 340px;
+      position: absolute;
+      background: rgba(255, 255, 255, .4);
+      padding: 50px 45px;
+      color: #00727d;
       box-sizing: border-box;
-      margin-top: 60px;
+      p {
+        font-size: 36px;
+      }
+      div {
+        font-size: 24px;
+        box-sizing: border-box;
+        margin-top: 60px;
+      }
     }
-  }
-  .imgRight {
-    position: absolute;
-    right: 100px;
-    top: 150px;
-    cursor: pointer;
-    &:hover {
-      transition: all 2s ease;
-      transform: rotate(360deg) translate(50px, 100px) scale(1.2);
-    }
-  }
-  .imgLeft {
-    position: absolute;
-    left: 0;
-    top: 226px;
-    cursor: pointer;
-    &:hover {
-      transition: all 2s ease;
-      transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
-    }
-  }
-  .footer {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    background: #2A3142;
-    div {
-      width: 75px;
-      height: 70px;
-      padding: 15px 0;
-      text-align: center;
-      box-sizing: border-box;
-      color: #fff;
+    .imgRight {
+      position: absolute;
+      right: 100px;
+      top: 150px;
       cursor: pointer;
+      &:hover {
+        transition: all 2s ease;
+        transform: rotate(360deg) translate(50px, 100px) scale(1.2);
+      }
+    }
+    .imgLeft {
+      position: absolute;
+      left: 0;
+      top: 226px;
+      cursor: pointer;
+      &:hover {
+        transition: all 2s ease;
+        transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
+      }
+    }
+    .footer {
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      background: #2A3142;
+      div {
+        width: 75px;
+        height: 70px;
+        padding: 15px 0;
+        text-align: center;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+      }
     }
   }
-}
 </style>
 
 
 <script>
-import vHeader from '../components/productHeader'
-export default {
-  methods: {
-    jumpHome() {
-      this.$router.push({ name: 'home' });
+  import vHeader from '../components/productHeader'
+  export default {
+    methods: {
+      jumpHome() {
+        this.$router.push({ name: 'home' });
+      }
+    },
+    components: {
+      vHeader
     }
-  },
-  components: {
-    vHeader
   }
-}
 </script>

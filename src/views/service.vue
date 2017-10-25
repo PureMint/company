@@ -91,7 +91,7 @@
           <div class="serve">
             <p style="font-size: 30px;margin-bottom: 72px">售后支持服务</p>
             <p>
-              &nbsp; &nbsp; &nbsp;领投者拥有一支技术精湛的专业运维服务队伍，具备先进的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制，实现股权投资管理系统巡检、故障修复、数据库平台的安装、配置系统升级、系统更新及系统优化、系统高可靠性维护、数据存储及备份、技术培训等，有效的地帮助客户实现股权投资管理系统的平稳运行。并且由产品开发人员直接提供帮助。我们努力做到第一时间响应，保证所有疑问或请求会在一个工作日内回复</p>
+              &nbsp; &nbsp; &nbsp;领投者拥有一支技术精湛的专业运维服务队伍，具备先进的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制，实现股权投资管理系统巡检、故障修复、数据库平台的安装、配置系统升级、系统更新及系统优化、系统高可靠性维护、数据存储及备份、技术培训等，有效的地帮助客户实现股权投资管理系统的平稳运行。并且由产品开发人员直接提供帮助。我们努力做到第一时间响应，保证所有疑问或请求会在一个工作日内回复。</p>
           </div>
           <!--遮罩层-->
           <div class="half-mask">
@@ -162,7 +162,7 @@
         color: #fff;
         border-bottom: 4px solid #F05E5E;
         position: absolute;
-        top: 136px;
+        top: 16%;
         right: 48px;
         padding-bottom: 15px;
       }
@@ -185,7 +185,7 @@
     .text {
       color: #9aa9ca;
       position: absolute;
-      top: 220px;
+      top: 30%;
       right: 48px;
       width: 500px;
     }
@@ -322,7 +322,7 @@
         /*height: 156px;*/
         position: absolute;
         top: 30%;
-        left: 25%;
+        left: 23%;
         color: #fff;
         font-size: 20px;
         /*padding-top: 10%;*/
@@ -340,22 +340,22 @@
       position: relative;
       .serve {
         position: absolute;
-        left: 25%;
+        left: 16%;
         top: 20%;
         text-align: right;
-        width: 400px;
+        width: 26%;
         h1 {
           transition: all 0.15s linear;
         }
         h1:hover {
           padding-right: 5%;
         }
-        p {
-          transition: all 0.15s linear;
-        }
-        p:hover {
-          padding-right: 5%;
-        }
+        /*p {*/
+          /*transition: all 0.15s linear;*/
+        /*}*/
+        /*p:hover {*/
+          /*padding-right: 5%;*/
+        /*}*/
       }
       .half-mask {
         /*背景颜色（透明），高度，宽度，绝对定位，初始位置，过渡*/

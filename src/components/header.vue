@@ -7,9 +7,7 @@
             <ul>
                 <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index" @click="jump(index)">
                     {{item.menu}}
-                    <!-- <img v-if="index==5" src=""></img> -->
                 </li>
-                <!-- <li><i class="el-icon-menu"></i></li> -->
             </ul>
         </nav>
     </header>
@@ -32,13 +30,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 9999;
-    background: @color-background-nav;
-    // &:after {
-    //     display: block;
-    //     content: '';
-    //     clear: both;
-    //     height: 0;
-    // }
+    background: @color-background-nav; 
     .logo {
         position: fixed;
         top: 9px;
@@ -66,25 +58,13 @@ header {
                     color: @color-border;
                 }
             }
-        }
+        } // &:after {
+        //     display: block;
+        //     content: '';
+        //     clear: both;
+        //     height: 0;
+        // }
     }
-    // @media screen and (max-width:1080px) {
-    //     ul {
-    //         float: right;
-    //         padding: 20px 10px 0 0;
-    //         >li {
-    //             color: #fff;
-    //             height: 20px;
-    //             line-height: 20px;
-    //             margin-bottom: 10px;
-    //             text-align: center;
-    //             cursor: pointer;
-    //             &:hover {
-    //                 background: rgba(225, 225, 225, 0.15);
-    //             }
-    //         }
-    //     }
-    // }
 }
 </style>
 

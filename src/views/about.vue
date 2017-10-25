@@ -10,7 +10,7 @@
           <div>
             <img src="../../static/img/about/about-us.png" alt="">
             <p style="width:125px;font-size:30px;color:#fff;font-family:'MicrosoftYaHei';padding-bottom:4px;margin-bottom:100px;border-bottom:4px solid #F05E5E;">关于我们</p>
-            <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;line-height:30px" class="animated  fadeInLeft">
+            <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;line-height:27px" class="animated  fadeInLeft">
               领投者拥有一支技术精湛的专业运维服务队伍，具备陷阱的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制
             </p>
           </div>
@@ -43,8 +43,8 @@
       <el-col :class="{company: index == 0,company1: index == 1,company2: index == 2}" :span="4" v-for="(item,index) in gsCompany" :key="item.index">
         <div>
           <div><img :src="item.src" alt=""></div>
-          <div :class="{'color-s': index==1,'color-t': index==2}">{{item.text1}}</div>
-          <div>{{item.text2}}</div>
+          <div :class="{'color-s': index==1,'color-t': index==2}"  style="color:#41578C;font-weight: bold ">{{item.text1}}</div>
+          <div style="font-weight: bold;line-height: 20px;font-size: 14px;color: #818693">{{item.text2}}</div>
         </div>
       </el-col>
     </el-row>
@@ -450,7 +450,7 @@ export default {
         },
         {
           src: "./static/img/about/Company3.png",
-          text1: "法定假期 , 风雨无阻",
+          text1: "扁平管理, 带薪年假",
           text2: "休息日,法定节假日、事假病假、婚假、产假、年休假丧假根据国家政策规定"
         }
       ]

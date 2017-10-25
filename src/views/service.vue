@@ -90,7 +90,7 @@
           <img src="../../static/img/service/after_sale.png" class="img-responsive" alt=""/>
           <div class="serve">
             <p style="font-size: 30px;margin-bottom: 72px">售后支持服务</p>
-            <p>
+            <p style="line-height: 27px">
               &nbsp; &nbsp; &nbsp;领投者拥有一支技术精湛的专业运维服务队伍，具备先进的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制，实现股权投资管理系统巡检、故障修复、数据库平台的安装、配置系统升级、系统更新及系统优化、系统高可靠性维护、数据存储及备份、技术培训等，有效的地帮助客户实现股权投资管理系统的平稳运行。并且由产品开发人员直接提供帮助。我们努力做到第一时间响应，保证所有疑问或请求会在一个工作日内回复。</p>
           </div>
           <!--遮罩层-->
@@ -188,6 +188,7 @@
       top: 30%;
       right: 48px;
       width: 500px;
+      line-height: 27px;
     }
     .exploit {
       .train {

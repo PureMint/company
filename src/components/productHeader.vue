@@ -5,8 +5,8 @@
         </div>
         <nav class="menu">
             <ul>
-                <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index">
-                    <a style="color:#fff" href="javascript:void(0)" @click="goAnchor(item.index)">{{item.menu}}</a>
+                <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index" @click.native="jump(index)">
+                    <a href="javascript:void(0)" @click="goAnchor('#custom')"> {{item.menu}} </a>
                 </li>
             </ul>
         </nav>
@@ -36,8 +36,7 @@ header {
     }
     @media screen and (min-width:1080px) {
         ul {
-            float: right;
-            // width: 870px;
+            float: right; // width: 870px;
             padding-right: 100px;
             >li {
                 float: left;
@@ -50,11 +49,10 @@ header {
                 cursor: pointer;
                 &:hover {
                     background: rgba(225, 225, 225, 0.15);
-                    border-bottom: 2px solid @color-border;
-                    // color: @color-border;
+                    border-bottom: 2px solid @color-border; // color: @color-border;
                 }
                 a:hover {
-                     color: @color-border;
+                    color: @color-border;
                 }
             }
         }
@@ -96,29 +94,73 @@ export default {
         }
     },
     methods: {
-        goAnchor(index) {
-            if (index == 0) {
-                var anchor =  document.getElementById('#search')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 1) {
-                var anchor = document.getElementById('#custom')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 2) {
-                var anchor =  document.getElementById('#analyse')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 3) {
-                var anchor =  document.getElementById('#manage')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 4) {
-                var anchor =  document.getElementById('#file')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 5) {
-                var anchor =  document.getElementById('#work')
-                document.body.scrollTop = anchor.offsetTop;
-            } else if (index == 6) {
-                var anchor =  document.getElementById('#alarm')
-                document.body.scrollTop = anchor.offsetTop;
-            } 
+        // goAnchor(index) {
+        //     if (index == 0) {
+        //         var anchor = document.getElementById('#search')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 1) {
+        //         var anchor = document.getElementById('#custom')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 2) {
+        //         var anchor = document.getElementById('#analyse')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 3) {
+        //         var anchor = document.getElementById('#manage')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 4) {
+        //         var anchor = document.getElementById('#file')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 5) {
+        //         var anchor = document.getElementById('#work')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     } else if (index == 6) {
+        //         var anchor = document.getElementById('#alarm')
+        //         document.body.scrollTop = anchor.offsetTop;
+        //     }
+        // },
+        goAnchor(selector) {
+            alert(111); 
+            var anchor = this.$el.querySelector(selector);
+            document.write(anchor);
+            document.body.scrollTop = anchor.offsetTop;
+        },
+
+        jump(index) {
+            // 用 class="d_jump" 添加锚点
+            let jump = document.querySelectorAll('.d_jump')
+            let total = jump[index].offsetTop
+            let distance = document.documentElement.scrollTop || document.body.scrollTop
+            // 平滑滚动，时长500ms，每10ms一跳，共50跳
+            let step = total / 50
+            if (total > distance) {
+                smoothDown()
+            } else {
+                let newTotal = distance - total
+                step = newTotal / 50
+                smoothUp()
+            }
+            function smoothDown() {
+                if (distance < total) {
+                    distance += step
+                    document.body.scrollTop = distance
+                    document.documentElement.scrollTop = distance
+                    setTimeout(smoothDown, 10)
+                } else {
+                    document.body.scrollTop = total
+                    document.documentElement.scrollTop = total
+                }
+            }
+            function smoothUp() {
+                if (distance > total) {
+                    distance -= step
+                    document.body.scrollTop = distance
+                    document.documentElement.scrollTop = distance
+                    setTimeout(smoothUp, 10)
+                } else {
+                    document.body.scrollTop = total
+                    document.documentElement.scrollTop = total
+                }
+            }
         }
     }
 }

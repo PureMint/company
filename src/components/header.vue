@@ -21,8 +21,11 @@
 body {
     width: 100%;
     position: relative;
-}
 
+}
+.navbar{
+  min-width: 1360px;
+}
 header {
     width: 100%;
     height: 70px;

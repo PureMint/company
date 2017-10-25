@@ -8,7 +8,7 @@
           <div :class="{actives: isActive}">
             <img src="../../static/img/about/about-us.png" alt="">
             <p style="width:125px;font-size:30px;color:#fff;font-family:'MicrosoftYaHei';padding-bottom:4px;margin-bottom:100px;border-bottom:4px solid #F05E5E;">关于我们</p>
-            <p style="width:450px;text-indent:28px;margin:8px;font-size:14px;color:#9aa9ca;">
+            <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;" class="animated  fadeInLeft">
               领投者拥有一支技术精湛的专业运维服务队伍，具备陷阱的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制
             </p>
           </div>
@@ -24,7 +24,7 @@
       <div>
         <el-col class="welImg" :span="5" v-for="(item,index) in welImg" :key="item.index">
           <div @mouseleave="welLeave(item,index)" @mouseover="welHover(item,index)">
-            <img :src="item.src">
+            <img :src="item.src" class="srcha">
             <div :class="item.welImg_posi"></div>
             <span class="span" v-show="index == 1">我们的休息室</span>
           </div>
@@ -128,7 +128,7 @@
       position: absolute;
       right: -50%;
       top: 0;
-      width: 50%;
+      width: 100%;
       height: 600px;
       transition: all 1s ease;
       background: rgba(76, 84, 104, .7);
@@ -142,11 +142,10 @@
       }
     }
     .actives {
-      right: 0 !important;
+      right: 0!important;
     }
   }
 }
-
 .welcom {
   width: 100%;
   height: 30px;
@@ -181,7 +180,7 @@
       background: rgba(0, 0, 0, 0.5);
     }
     .welImg_posi1_1 {
-      width: 336px;
+      width: 340px;
       height: 240px;
       position: absolute;
       top: 0px;
@@ -202,7 +201,7 @@
       }
     }
     .welImg_posi2_2 {
-      width: 336px;
+      width: 340px;
       height: 240px;
       position: absolute;
       top: 0;
@@ -225,7 +224,7 @@
       background: rgba(0, 0, 0, 0.5);
     }
     .welImg_posi3_3 {
-      width: 336px;
+      width: 340px;
       height: 240px;
       position: absolute;
       top: 0;
@@ -407,7 +406,7 @@ export default {
       welImg_posi1_1: "welImg_posi1_1",
       welImg_posi2_2: "welImg_posi2_2",
       welImg_posi3_3: "welImg_posi3_3",
-      isActive: false,
+      isActive: true  ,
       welcomJ: "欢迎你的加入",
       welImg: [
         {

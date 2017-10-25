@@ -1,7 +1,7 @@
 <template>
   <section class="product">
     <!-- 导航栏 -->
-    <header class="navbar" :class="{'bg-s':show1}">
+    <header class="navbar">
       <div class="logo">
         <img src="/static/img/logo-2.png" alt="领投者" class="img-responsive" />
       </div>
@@ -345,6 +345,8 @@ export default {
     goAnchor(selector,index) {
       var anchor = this.$el.querySelector(selector);
       document.body.scrollTop = anchor.offsetTop;
+      document.documentElement.scrollTop = anchor.offsetTop;
+
       // if(anchor.offsetTop<1150) {
       //     this.show1 = true;
       // }

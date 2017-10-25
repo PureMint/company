@@ -90,7 +90,7 @@ export default {
             } else if (index == 1) {
                 this.$router.push({ name: 'product' });
             } else if (index == 2) {
-                this.$router.push({ name: 'service' });  
+                this.$router.push({ name: 'service' });
             } else if (index == 3) {
                 this.$router.push({ name: 'about' });
             } else {

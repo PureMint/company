@@ -65,7 +65,7 @@
 
             </el-col>
             <el-col :span="10" class="address">
-              <ul>
+              <ul  class="address">
                 <li v-for="(address,index) in addressList" :key="address.index"> {{address.li }} </li>
               </ul>
             </el-col>
@@ -80,7 +80,7 @@
 <style lang="less" scoped>
   .download {
     margin-top: 70px;
-    min-width: 1360px;
+    min-width: 1400px;
     .clear {
       clear: both;
     }
@@ -120,14 +120,17 @@
         text-align: center;
         margin-bottom: 50px;
       }
+      .address li:first-child {
+        margin-bottom: 10px;
+      }
       ul {
         float: left;
         li:first-child {
           margin-bottom: 30px;
         }
         li {
-          color: #fff;
-          font-size: 17px;
+          color: #ddd;
+          font-size: 15px;
           margin-bottom: 10px;
         }
         li:focus {

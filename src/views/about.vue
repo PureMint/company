@@ -3,9 +3,11 @@
     <v-header></v-header>
     <el-row>
       <el-col :span="24" class="banner">
-        <div @mouseleave="leave($event)" @mouseover="hover($event)">
+        <!-- <div @mouseleave="leave($event)" @mouseover="hover($event)"> -->
+        <div>
           <div></div>
-          <div :class="{actives: isActive}">
+          <!-- <div :class="{actives: isActive}"> -->
+          <div>
             <img src="../../static/img/about/about-us.png" alt="">
             <p style="width:125px;font-size:30px;color:#fff;font-family:'MicrosoftYaHei';padding-bottom:4px;margin-bottom:100px;border-bottom:4px solid #F05E5E;">关于我们</p>
             <p style="width:450px;text-indent:28px;margin:8px;font-size:16px;color:#9aa9ca;line-height:30px" class="animated  fadeInLeft">
@@ -90,17 +92,17 @@
       <el-col :span="6" class="ruleForm2">
         <div>
           <el-form label-position="left" :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-            <el-form-item label="应聘职位 : " prop="pass">
-              <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+            <el-form-item label="应聘职位 : " prop="position">
+              <el-input v-model="ruleForm2.position" auto-complete="off"></el-input>
             </el-form-item>
-            <el-form-item label="姓 名 : " prop="checkPass">
-              <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
+            <el-form-item label="姓 名 : " prop="name">
+              <el-input v-model="ruleForm2.name" auto-complete="off"></el-input>
             </el-form-item>
-            <el-form-item label="电 话 : " prop="age">
-              <el-input v-model.number="ruleForm2.age"></el-input>
+            <el-form-item label="电 话 : " prop="phone">
+              <el-input v-model="ruleForm2.phone"></el-input>
             </el-form-item>
-            <el-form-item label="建 议 : " prop="age">
-              <el-input v-model.number="ruleForm2.age"></el-input>
+            <el-form-item label="建 议 : " prop="advise">
+              <el-input v-model="ruleForm2.advise"></el-input>
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
@@ -136,6 +138,9 @@
       z-index: 0;
       padding: 100px 48px;
       box-sizing: border-box;
+      &:hover {
+        right: 0;
+      }
       img {
         position: absolute;
         top: 98px;
@@ -352,51 +357,52 @@ import vHeader from '../components/header'
 import vFooter from '../components/footer'
 export default {
   data() {
-    var checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error("年龄不能为空"));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error("请输入数字值"));
-        } else {
-          if (value < 18) {
-            callback(new Error("必须年满18岁"));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    };
-    var validatePass = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请输入密码"));
-      } else {
-        if (this.ruleForm2.checkPass !== "") {
-          this.$refs.ruleForm2.validateField("checkPass");
-        }
-        callback();
-      }
-    };
-    var validatePass2 = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请再次输入密码"));
-      } else if (value !== this.ruleForm2.pass) {
-        callback(new Error("两次输入密码不一致!"));
-      } else {
-        callback();
-      }
-    };
+    // var checkAge = (rule, value, callback) => {
+    //   if (!value) {
+    //     return callback(new Error("年龄不能为空"));
+    //   }
+    //   setTimeout(() => {
+    //     if (!Number.isInteger(value)) {
+    //       callback(new Error("请输入数字值"));
+    //     } else {
+    //       if (value < 18) {
+    //         callback(new Error("必须年满18岁"));
+    //       } else {
+    //         callback();
+    //       }
+    //     }
+    //   }, 1000);
+    // };
+    // var validatePass = (rule, value, callback) => {
+    //   if (value === "") {
+    //     callback(new Error("请输入密码"));
+    //   } else {
+    //     if (this.ruleForm2.checkPass !== "") {
+    //       this.$refs.ruleForm2.validateField("checkPass");
+    //     }
+    //     callback();
+    //   }
+    // };
+    // var validatePass2 = (rule, value, callback) => {
+    //   if (value === "") {
+    //     callback(new Error("请再次输入密码"));
+    //   } else if (value !== this.ruleForm2.pass) {
+    //     callback(new Error("两次输入密码不一致!"));
+    //   } else {
+    //     callback();
+    //   }
+    // };
     return {
       ruleForm2: {
-        pass: "",
-        checkPass: "",
-        age: ""
+        position: '',
+        name: '',
+        phone: '',
+        advise: ''
       },
       rules2: {
-        pass: [{ validator: validatePass, trigger: "blur" }],
-        checkPass: [{ validator: validatePass2, trigger: "blur" }],
-        age: [{ validator: checkAge, trigger: "blur" }]
+        position: [{ message: '请输入应聘职位', trigger: 'blur' }],
+        name: [{ message: '请输入姓名', trigger: 'blur' }],
+        phone: [{ message: '请输入电话', trigger: 'blur' }]
       },
       tabContent: [
         { text: "1、熟练使用Word , Excel等office办公软件" },
@@ -451,31 +457,31 @@ export default {
     };
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
-          return false;
-        }
-      });
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields();
-    },
+    // submitForm(formName) {
+    //   this.$refs[formName].validate(valid => {
+    //     if (valid) {
+    //       alert("submit!");
+    //     } else {
+    //       console.log("error submit!!");
+    //       return false;
+    //     }
+    //   });
+    // },
+    // resetForm(formName) {
+    //   this.$refs[formName].resetFields();
+    // },
     handleClick() { },
-    hover(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      // alert(0)
-      this.isActive = true;
-    },
-    leave(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      this.isActive = false;
-    },
+    // hover(e) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   // alert(0)
+    //   this.isActive = true;
+    // },
+    // leave(e) {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   this.isActive = false;
+    // },
     welHover(item, index) {
       console.log(item);
       console.log(index);

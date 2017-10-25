@@ -79,7 +79,7 @@ export default {
                 { menu: '服务' },
                 { menu: '关于' },
                 { menu: '下载' },
-                { menu: '登录 / 注册' }
+                // { menu: '登录 / 注册' }
             ]
         }
     },

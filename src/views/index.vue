@@ -347,23 +347,23 @@
                 }
             }
             .iconMu {
-                position: absolute;
-                left: 14%;
+                position: absolute; // left: 14%;
+                left: 100px;
             }
             .iconTou {
                 position: absolute;
-                bottom: 54%;
-                right: 14%;
+                bottom: 54%; // right: 14%;
+                right: 100px;
             }
             .iconGuan {
                 position: absolute;
-                top: 52%;
-                left: 14%;
+                top: 52%; // left: 14%;
+                left: 100px;
             }
             .iconExit {
                 position: absolute;
-                bottom: 22%;
-                right: 14%;
+                bottom: 22%; // right: 14%;
+                right: 100px;
             }
         }
     }

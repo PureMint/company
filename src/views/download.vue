@@ -11,7 +11,7 @@
     <el-row>
       <el-col :span="24">
         <div class="banner">
-          <img src="../../static/img/download/Dbanner-.png" class="img-responsive" alt="" />
+          <img src="../../static/img/download/banner.png" class="img-responsive" alt="" />
         </div>
         <div class="app">
           <img src="../../static/img/download/official.png" class="img-responsive" alt="">
@@ -99,6 +99,9 @@
       width: 25%;
       img {
         margin-bottom: 20px;
+      }
+      .ios img:nth-child(1)  {
+         margin-bottom: 35px;
       }
     }
     .map {

@@ -7,10 +7,9 @@
         <div class="search" id="search">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
-              <a href="#search">全网搜索</a>
-              <div id="wire">
+              <p>全网搜索</p>
+              <div>
                 输入公司名称，即可搜索项目工商，融资等多种信息；
-
               </div>
             </div>
             <div class="imgRight">
@@ -24,11 +23,9 @@
         <div class="custom" id="custom">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
-              <a href="#flow">流程定制</a>
-              <div id="flow">
+              <p>流程定制</p>
+              <div>
                 根据机构业务定制流程，系统后台可快速配置；
-
-
               </div>
             </div>
             <div class="imgLeft">
@@ -42,10 +39,9 @@
         <div class="analyse" id="analyse">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
-              <a href="#analyze">统计分析</a>
-              <div id="analyze">
+              <p>统计分析</p>
+              <div>
                 多角度报表统计分析，灵活的筛选条件，报表一键导出
-
               </div>
             </div>
             <div class="imgRight">
@@ -59,10 +55,9 @@
         <div class="manage" id="manage">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
-              <a href="#after">投后管理</a>
-              <div id="after">
+              <p>投后管理</p>
+              <div>
                 自动跟踪项目动态，分析管理被投企业财务情况，业务数据
-
               </div>
             </div>
             <div class="imgLeft">
@@ -75,10 +70,9 @@
         <div class="file" id="file">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
-              <a href="#document">文档管理</a>
-              <div id="document">
+              <p>文档管理</p>
+              <div>
                 根据项目流程自动归档项目文档，灵活的项目配置权限
-
               </div>
             </div>
             <div class="imgRight">
@@ -91,10 +85,9 @@
         <div class="work" id="work">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
-              <a href="#synergy">协同办公</a>
-              <div id="synergy">
+              <p>协同办公</p>
+              <div>
                 机构同事间通过任务协作，记录每一项任务进程
-
               </div>
             </div>
             <div class="imgLeft">
@@ -107,10 +100,9 @@
         <div class="alarm" id="alarm">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
-              <a href="#warning">风险预警</a>
-              <div id="warning">
+              <p>风险预警</p>
+              <div>
                 智能监控被投企业数据，第一时间自动预警
-
               </div>
             </div>
             <div class="imgRight">
@@ -133,6 +125,7 @@
 <style lang="less" scoped>
   .product {
     margin-top: 70px;
+    min-width: 1360px;
     .search {
       position: relative;
       height: 1080px;
@@ -244,7 +237,7 @@
   export default {
     methods: {
       jumpHome() {
-        this.$router.push({name: 'home'});
+        this.$router.push({ name: 'home' });
       }
     },
     components: {

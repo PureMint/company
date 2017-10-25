@@ -9,7 +9,7 @@
           <div class="half-mask">
             <div>
               <p class="title">服务</p>
-              <p class="text animated fadeInRight">
+              <p class="text  animated  fadeInRight">
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;领投者拥有一支专业的软件开发和维护团队，可以为客户提供优质的开发实施服务和售后运维服务。对每一个“股权投资管理系统”建设项目，领投者都提供相应的技术服务，包括免费的标准开发实施和系统质保运维服务，以及按照开发工作量计价的定制开发实施服务、按年收费的系统保后运维服务，客户均根据自身的系统建设需求进行选购。</p>
             </div>
             <div class="serve_red">SERVE</div>
@@ -22,28 +22,29 @@
           <p>开发实施服务</p>
           <el-row :gutter="20">
             <el-col :span="16" :offset="4">
-              <div style="margin-bottom: 30px">
-                <span class="norm">
-                  标准开发实施
-                   <span class="gratis">免费</span>
-                </span>
+              <div style="margin-bottom:  30px">
+                                <span class="norm">
+                                    标准开发实施
+                                      <span class="gratis">免费</span>
+                                </span>
               </div>
-              <el-row style="overflow: hidden">
-                <el-col :span="16" style="flex-direction: column;display:flex">
-                  <div class="tb_mask" data-text="二次开发 " style="font-size: 30px;">
+              <el-row style="overflow:  hidden">
+                <el-col :span="16" style="flex-direction:  column;display:flex">
+                  <div class="tb_mask" data-text="二次开发  " style="font-size:  30px;">
                     <img src="../../static/img/service/secondary.png" class="img-responsive"
-                         style="flex-direction: column" alt="">
-                    <!--<span style="width: 200px; font-size: 20px;position: absolute;top:0;right: 0;z-index: 1000">基于标准系统不超过10%功能点的二次开发，可根据用户的特定需求灵活定制。</span>-->
+                         style="flex-direction:  column" alt="">
+                    <!--<span  style="width:  200px;  font-size:  20px;position:  absolute;top:0;right:  0;z-index:  1000">基于标准系统不超过10%功能点的二次开发，可根据用户的特定需求灵活定制。</span>-->
                   </div>
 
-                  <div class="bt_mask train" data-text="使用培训">
-                    <img src="../../static/img/service/train.png" class="img-responsive" style="flex-direction: column"
+                  <div class="bt_mask  train" data-text="使用培训">
+                    <img src="../../static/img/service/train.png" class="img-responsive"
+                         style="flex-direction:  column"
                          alt="">
                   </div>
                 </el-col>
 
                 <el-col :span="8">
-                  <div class="rl_mask train" data-text="系统部署">
+                  <div class="rl_mask  train" data-text="系统部署">
                     <img src="../../static/img/service/deploy.png" class="img-responsive" alt="">
                   </div>
                 </el-col>
@@ -56,23 +57,25 @@
         <div class="customization">
           <el-row :gutter="20">
             <el-col :span="16" :offset="4">
-              <div style="margin-bottom: 40px">
-                <span class="norm">
-                  定制开发实施
-                  <span class="gratis">可选</span>
-                </span>
+              <div style="margin-bottom:  40px">
+                                <span class="norm">
+                                    定制开发实施
+                                    <span class="gratis">可选</span>
+                                </span>
               </div>
-              <el-row :gutter="20" style="display: flex; flex-direction: row ;flex-wrap: nowrap">
+              <el-row :gutter="20" style="display:  flex;  flex-direction:  row  ;flex-wrap:  nowrap">
                 <el-col :span="12" class="custom-made">
-                  <img src="../../static/img/service/customization1.png" class="img-responsive" alt="">
+                  <img src="../../static/img/service/customization1.png" class="img-responsive"
+                       alt="">
                   <div class="custom-text">
-                    <p class="animated fadeInRight">
+                    <p class="animated  fadeInRight">
                       本服务针对特定需求较多的客户按照实际研发工作量收费。
-                    </p>
+                 </p>
                   </div>
                 </el-col>
                 <el-col :span="6" :offset="5" class="custom-made">
-                  <img src="../../static/img/service/customization2.png" class="img-responsive" alt="">
+                  <img src="../../static/img/service/customization2.png" class="img-responsive"
+                       alt="">
                   <div class="custom-text">
                     <p>服务包含标准系统的所有服务并根据用户功能需求进行深度定制开发。</p>
                   </div>

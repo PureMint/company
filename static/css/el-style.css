@@ -1,0 +1,23 @@
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+    border: 1px solid #f05e5e;
+    background: #f05e5e;
+    /* border-radius: 0; */
+    color: #fff;
+  }
+  .el-tabs__item {
+    padding: 0 8px;
+    height: 42px;
+    box-sizing: border-box;
+    line-height: 42px;
+    display: inline-block;
+    list-style: none;
+    font-size: 20px;
+    color: #000;
+    position: relative;
+  }
+  .el-tabs__header {
+    border-bottom: 1px solid #f05e5e;
+    padding: 0;
+    position: relative;
+    margin: 0 0 14px;
+}

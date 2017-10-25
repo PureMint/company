@@ -6,7 +6,11 @@
         <div @mouseleave="leave($event)" @mouseover="hover($event)">
           <div></div>
           <div :class="{actives: isActive}">
-            dsd
+            <img src="../../static/img/about/about-us.png" alt="">
+            <p style="width:125px;font-size:30px;color:#fff;font-family:'MicrosoftYaHei';padding-bottom:4px;margin-bottom:100px;border-bottom:4px solid #F05E5E;">关于我们</p>
+            <p style="width:450px;text-indent:28px;margin:8px;font-size:14px;color:#9aa9ca;">
+              领投者拥有一支技术精湛的专业运维服务队伍，具备陷阱的技术服务水平及丰富的软件系统运维经验。配合服务热线、远程技术支持和先进的服务管理机制
+            </p>
           </div>
         </div>
       </el-col>
@@ -36,7 +40,7 @@
       <el-col :class="{company: index == 0,company1: index == 1,company2: index == 2}" :span="4" v-for="(item,index) in gsCompany" :key="item.index">
         <div>
           <div><img :src="item.src" alt=""></div>
-          <div>{{item.text1}}</div>
+          <div :class="{'color-s': index==1,'color-t': index==2}">{{item.text1}}</div>
           <div>{{item.text2}}</div>
         </div>
       </el-col>
@@ -50,8 +54,8 @@
       <el-col :span="6" :offset="4" class="">
         <img src="static/img/about/left.svg" alt="" />
         <img src="static/img/about/right.svg" alt="" />
-        <el-tabs class="elTabs" v-model="activeName2" type="card" @tab-click="handleClick">
-          <el-tab-pane label="服务员" name="first">
+        <el-tabs  v-model="activeName2" type="card" @tab-click="handleClick">
+          <el-tab-pane label="财务员" name="first">
             <div class="tabPosi">
               <div v-for="(item,index) in tabContent" :key="item.index">
                 <span>{{item.text}}</span>
@@ -108,11 +112,11 @@
   </section>
 </template>
 
-
 <style lang="less" scoped>
 .about {
   margin-top: 70px;
   overflow: hidden;
+  min-width: 1360px;
   .banner {
     position: relative;
     >div>div:nth-child(1) {
@@ -126,8 +130,16 @@
       top: 0;
       width: 50%;
       height: 600px;
-      background: rgba(0, 0, 0, 0.5);
+      transition: all 1s ease;
+      background: rgba(76, 84, 104, .7);
       z-index: 0;
+      padding: 100px 48px;
+      box-sizing: border-box;
+      img {
+        position: absolute;
+        top: 98px;
+        left: -160px;
+      }
     }
     .actives {
       right: 0 !important;
@@ -138,8 +150,9 @@
 .welcom {
   width: 100%;
   height: 30px;
+  font-size: 30px;
   text-align: center;
-  margin: 90px 0;
+  margin: 90px 0 80px 0;
 }
 
 .join {
@@ -229,7 +242,7 @@
 }
 
 .fontS {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .gsCompany {
@@ -247,14 +260,19 @@
     >div {
       >div:nth-child(2) {
         width: 195px;
-        font-size: 20px;
-        font-weight: bolder;
-        color: red;
+        font-size: 18px;
+        color: #f05e5e;
         margin: 39px 0 0 -40px;
+      }
+      .color-s {
+        color:#41578c;
+      }
+      .color-t {
+        color:#9aa9ca;
       }
       >div:nth-child(3) {
         width: 195px;
-        font-size: 16px;
+        font-size: 14px;
         margin: 25px 0 90px -40px;
       }
     }
@@ -294,7 +312,6 @@
   margin-bottom: 90px;
   >div {
     position: relative;
-
     >img {
       display: inline-block;
       position: absolute;
@@ -307,14 +324,16 @@
   }
   .elTabs {}
 }
-
 .tabPosi {
   margin-top: 18px;
   background: #f2f4f8; // width: 100%;
   height: 236px;
   padding: 52px 48px;
   >div {
-    margin: 20px 0;
+    margin: 10px 0;
+    span {
+      font-size: 14px;
+    }
   }
 }
 </style>
@@ -372,11 +391,11 @@ export default {
         age: [{ validator: checkAge, trigger: "blur" }]
       },
       tabContent: [
-        { text: "1、熟练使用Word , Excel等office办公软件 ," },
-        { text: "2、 熟练使用Word , Excel等office办公软件 ," },
-        { text: "3、 熟练使用Word , Excel等office办公软件 ," },
-        { text: "4、 熟练使用Word , Excel等office办公软件 ," },
-        { text: "5、 熟练使用Word , Excel等office办公软件 ," }
+        { text: "1、熟练使用Word , Excel等office办公软件" },
+        { text: "2、对于网上银行的操作以及银行汇票、本票、支票等票据能够熟练操作" },
+        { text: "3、负责编制公司会计凭证，审核、装订及保管各类会计凭证，登记及保管各类账薄" },
+        { text: "4、按月编制会计报表，并进行分析汇总，报公司领导备案决策" },
+        { text: "5、负责监督公司财务运作情况及时核对现金" }
       ],
       activeName2: "first",
       lounge: true,

@@ -1,7 +1,7 @@
 <template>
   <section class="product">
     <!-- 导航栏 -->
-    <header class="navbar" :class="{'bg-s':show1}">
+    <header class="navbar" >
       <div class="logo">
         <img src="/static/img/logo-2.png" alt="领投者" class="img-responsive" />
       </div>
@@ -141,6 +141,7 @@
 <style lang="less" scoped>
 @import '../common/css/variable.less';
 header {
+  min-width: 1360px;
   width: 100%;
   height: 70px;
   position: fixed;
@@ -152,7 +153,6 @@ header {
     top: 9px;
     left: 50px;
   }
-  @media screen and (min-width:1080px) {
     ul {
       float: right; // width: 870px;
       padding-right: 100px;
@@ -171,24 +171,24 @@ header {
         }
       }
     }
-  }
-  @media screen and (max-width:1080px) {
-    ul {
-      display: none; // float: right;
-      // padding-right: 100px;
-      >li {
-        color: #2A3142;
-        height: 70px;
-        width: 110px;
-        text-align: center;
-        line-height: 70px;
-        cursor: pointer;
-        &:hover {
-          background: rgba(225, 225, 225, 0.15);
-        }
-      }
-    }
-  }
+
+  /*@media screen and (max-width:1080px) {*/
+    /*ul {*/
+      /*display: none; // float: right;*/
+      /*// padding-right: 100px;*/
+      /*>li {*/
+        /*color: #2A3142;*/
+        /*height: 70px;*/
+        /*width: 110px;*/
+        /*text-align: center;*/
+        /*line-height: 70px;*/
+        /*cursor: pointer;*/
+        /*&:hover {*/
+          /*background: rgba(225, 225, 225, 0.15);*/
+        /*}*/
+      /*}*/
+    /*}*/
+  /*}*/
 }
 
 .product {

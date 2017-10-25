@@ -22,7 +22,7 @@ body {
 
 }
 .navbar{
-  min-width: 1360px;
+  min-width: 1280px;
 }
 header {
     width: 100%;
@@ -30,7 +30,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 9999;
-    background: @color-background-nav; 
+    background: @color-background-nav;
     .logo {
         position: fixed;
         top: 9px;
@@ -79,7 +79,7 @@ export default {
                 { menu: '服务' },
                 { menu: '关于' },
                 { menu: '下载' },
-                { menu: '登录 / 注册' }
+//                { menu: '登录 / 注册' }
             ]
         }
     },

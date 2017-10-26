@@ -2,12 +2,12 @@
   <section class="download">
     <v-header></v-header>
     <!-- <el-row>
-                  <el-col :span="24">
-                    <div class="banner"> -->
+                    <el-col :span="24">
+                      <div class="banner"> -->
     <!-- <img src="../../static/img/download/banner.png" class="img-responsive" alt="" /> -->
     <!-- </div>
-                  </el-col>
-                </el-row> -->
+                    </el-col>
+                  </el-row> -->
     <el-row>
       <el-col :span="24">
         <div class="banner">
@@ -79,8 +79,8 @@
 
 <style lang="less" scoped>
 .download {
+  min-width: 800px;
   margin-top: 70px;
-  min-width: 1400px;
   .clear {
     clear: both;
   }
@@ -146,7 +146,7 @@ import vHeader from '../components/header'
 import vFooter from '../components/footer'
 export default {
   created() {
-     this.goTop();
+    this.goTop();
   },
   data() {
     return {

@@ -141,7 +141,7 @@
 <style lang="less" scoped>
 @import '../common/css/variable.less';
 header {
-  min-width: 1360px;
+
   width: 100%;
   height: 70px;
   position: fixed;

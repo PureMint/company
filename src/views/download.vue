@@ -79,7 +79,7 @@
 
 <style lang="less" scoped>
   .download {
-    min-width: 540px;
+    min-width:800px;
     margin-top: 70px;
     .clear {
       clear: both;

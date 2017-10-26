@@ -131,7 +131,7 @@
       height: 80px;
       /*line-height: 40px;*/
       .records{
-        line-height: 40px;
+        line-height: 40px; 
       }
       .network{
         line-height: 40px;

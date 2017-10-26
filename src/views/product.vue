@@ -141,13 +141,14 @@
 <style lang="less" scoped>
 @import '../common/css/variable.less';
 header {
-
   width: 100%;
   height: 70px;
   position: fixed;
   top: 0;
   z-index: 9999;
   background: #f2f4f8;
+  min-width: 1000px;
+  overflow: hidden;
   .logo {
     position: fixed;
     top: 9px;
@@ -155,7 +156,10 @@ header {
   }
   ul {
     float: right; // width: 870px;
-    padding-right: 100px;
+    /*padding-right: 100px;*/
+    padding-left: 230px;
+    min-width: 670px;
+    overflow: hidden;
     >li {
       float: left;
       color: #2A3142;

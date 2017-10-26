@@ -180,7 +180,7 @@
   .text {
     color: #9aa9ca;
     position: absolute;
-    top: 30%;
+    top: 34%;
     right: 48px;
     width: 41%;
     line-height: 27px;

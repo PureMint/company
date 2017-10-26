@@ -147,47 +147,47 @@ header {
   position: fixed;
   top: 0;
   z-index: 9999;
-  background: #f2f4f8 ;
+  background: #f2f4f8;
   .logo {
     position: fixed;
     top: 9px;
     left: 50px;
   }
-    ul {
-      float: right; // width: 870px;
-      padding-right: 100px;
-      >li {
-        float: left;
-        color: #2A3142;
-        height: 70px;
-        width: 110px;
-        box-sizing: border-box;
-        text-align: center;
-        line-height: 70px;
-        cursor: pointer;
-        &:hover {
-          background: rgba(200, 200, 200, 0.15);
-          border-bottom: 2px solid @color-border; // color: @color-border;
-        }
+  ul {
+    float: right; // width: 870px;
+    padding-right: 100px;
+    >li {
+      float: left;
+      color: #2A3142;
+      height: 70px;
+      width: 110px;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 70px;
+      cursor: pointer;
+      &:hover {
+        background: rgba(200, 200, 200, 0.15);
+        border-bottom: 2px solid @color-border; // color: @color-border;
       }
     }
+  }
 
   /*@media screen and (max-width:1080px) {*/
-    /*ul {*/
-      /*display: none; // float: right;*/
-      /*// padding-right: 100px;*/
-      /*>li {*/
-        /*color: #2A3142;*/
-        /*height: 70px;*/
-        /*width: 110px;*/
-        /*text-align: center;*/
-        /*line-height: 70px;*/
-        /*cursor: pointer;*/
-        /*&:hover {*/
-          /*background: rgba(225, 225, 225, 0.15);*/
-        /*}*/
-      /*}*/
-    /*}*/
+  /*ul {*/
+  /*display: none; // float: right;*/
+  /*// padding-right: 100px;*/
+  /*>li {*/
+  /*color: #2A3142;*/
+  /*height: 70px;*/
+  /*width: 110px;*/
+  /*text-align: center;*/
+  /*line-height: 70px;*/
+  /*cursor: pointer;*/
+  /*&:hover {*/
+  /*background: rgba(225, 225, 225, 0.15);*/
+  /*}*/
+  /*}*/
+  /*}*/
   /*}*/
 }
 
@@ -297,6 +297,7 @@ header {
     }
   }
 }
+
 // .bg-s {
 //    background: #fff;
 // }
@@ -306,6 +307,9 @@ header {
 <script>
 // import vHeader from '../components/productHeader'
 export default {
+  created() {
+    this.goTop();
+  },
   data() {
     return {
       // show1: false,
@@ -342,7 +346,7 @@ export default {
     }
   },
   methods: {
-    goAnchor(selector,index) {
+    goAnchor(selector, index) {
       var anchor = this.$el.querySelector(selector);
       document.body.scrollTop = anchor.offsetTop;
       document.documentElement.scrollTop = anchor.offsetTop;
@@ -353,6 +357,10 @@ export default {
     },
     jumpHome() {
       this.$router.push({ name: 'home' });
+    },
+    goTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   },
 }

@@ -131,7 +131,7 @@
 @import '../common/css/variable.less';
 .home {
     margin-top: 70px;
-    min-width: 1000px;
+    min-width: 1150px;
     .img-responsive {
         display: inline-block;
         height: 100%;

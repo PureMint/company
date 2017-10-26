@@ -113,7 +113,7 @@
 .service {
   font-family: "microsoft yahei";
   margin-top: 70px;
-  min-width: 1360px;
+  min-width: 1000px;
   .serve_red {
     width: 161px;
     height: 40px;
@@ -182,7 +182,7 @@
     position: absolute;
     top: 30%;
     right: 48px;
-    width: 500px;
+    width: 41%;
     line-height: 27px;
   }
   .exploit {
@@ -306,26 +306,24 @@
       transform: scale(1.1);
     }
     .custom-made {
-      width: 524px;
-      height: 312px;
+      width: 100%;
+      height: 100%;
       position: relative;
       overflow: hidden;
     }
     .custom-text {
-      width: 262px;
-      /*height: 156px;*/
+      width:50%;
       position: absolute;
-      top: 30%;
-      left: 23%;
+      top: 33%;
+      left: 25%;
       color: #fff;
-      font-size: 20px;
-      /*padding-top: 10%;*/
-      p {
-        transition: all 0.15s ease;
-      }
-      p:hover {
-        padding-right: 5%;
-      }
+      font-size: 16px;
+      /*p {*/
+        /*transition: all 0.15s ease;*/
+      /*}*/
+      /*p:hover {*/
+        /*padding-right: 5%;*/
+      /*}*/
     }
   }
   .after {
@@ -400,7 +398,13 @@ export default {
     goTop() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-    }
+    },
+//    scroll(){
+//        $(window).scroll(function () {
+//          var a = $(window).scrollTop();
+//          if(){}
+//        })
+//    }
   },
   components: {
     vHeader,

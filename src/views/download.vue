@@ -57,7 +57,7 @@
                   <ul>
                     <li v-for="(download,index) in downloadList" :key="download.index"> {{ download.li }} </li>
                     <li>
-                      <img src="../../static/img/download/qr_code.png" alt="">
+                      <img src="../../static/img/download/qr_code.png"  class="img-responsive" alt="">
                     </li>
                   </ul>
                 </el-col>
@@ -79,7 +79,7 @@
 
 <style lang="less" scoped>
  .download {
-      min-width: 800px;
+      min-width:1000px;
       margin-top: 70px;
       .clear {
         clear: both;
@@ -111,14 +111,14 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        top: 10%;
+        top: 5%;
         left: 0;
         overflow: hidden;
         p {
           font-size: 30px;
           color: #fff;
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 2%;
         }
         .address li:first-child {
           margin-bottom: 10px;

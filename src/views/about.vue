@@ -43,7 +43,7 @@
       <el-col :class="{company: index == 0,company1: index == 1,company2: index == 2}" :span="4" v-for="(item,index) in gsCompany" :key="item.index">
         <div>
           <div><img :src="item.src" alt=""></div>
-          <div :class="{'color-s': index==1,'color-t': index==2}"  style="color:#41578C;font-weight: bold ">{{item.text1}}</div>
+          <div :class="{'color-s': index==1,'color-t': index==2}" style="color:#41578C;font-weight: bold ">{{item.text1}}</div>
           <div style="font-weight: bold;line-height: 20px;font-size: 14px;color: #818693">{{item.text2}}</div>
         </div>
       </el-col>
@@ -356,6 +356,9 @@
 import vHeader from '../components/header'
 import vFooter from '../components/footer'
 export default {
+  created() {
+    this.goTop();
+  },
   data() {
     // var checkAge = (rule, value, callback) => {
     //   if (!value) {
@@ -504,6 +507,10 @@ export default {
       } else {
         item.welImg_posi = this.welImg_posi3;
       }
+    },
+    goTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   },
   components: {

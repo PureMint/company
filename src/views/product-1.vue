@@ -1,5 +1,5 @@
 <template>
-  <section class="product" id="product">
+  <section class="product">
     <!-- 导航栏 -->
     <header class="navbar">
       <div class="logo">
@@ -14,7 +14,7 @@
       </nav>
     </header>
     <!-- <v-header></v-header> -->
-    <el-row id="main">
+    <el-row>
       <!-- 全网搜索 -->
       <el-col :span="24">
         <div class="d_jump search" id="search">
@@ -202,7 +202,6 @@ header {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
-    // background-size: 100%;
   }
   .custom {
     position: relative;
@@ -291,11 +290,6 @@ header {
     display: flex;
     justify-content: center;
     background: #2A3142;
-    position: fixed;
-    right: 30px;
-    bottom: 100px;
-    border-radius: 50%;
-    font-size: 13px;
     div {
       width: 75px;
       height: 70px;
@@ -318,7 +312,7 @@ header {
 // import vHeader from '../components/productHeader'
 export default {
   mounted() {
-    window.addEventListener('mousewheel', this.scrollFunc, false);
+    window.addEventListener('scroll', this.fullPage);
   },
   created() {
     this.goTop();
@@ -327,7 +321,6 @@ export default {
   },
   data() {
     return {
-      number: 0,
       // show1: false,
       navList: [
         {
@@ -374,33 +367,69 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
-    scrollFunc(e) {
-      // let num = 0;
-      e = event || window.event;
-        console.log(e);
-        // e.deltaY = 0;
-      // let distence = document.body.scrollTop;
-      // let total = document.body.clientHeight;
-      if (e.wheelDelta > 0) {
-        // this.number = 0;
-        // this.number+=1;
-        // console.log(this.number);
-        // alert('向上滚动');
-        // if(this.number == '4'){
-        //   console.log(4);
-        //   document.body.scrollTop -= 1000;
-        // }else{
-        //   document.body.scrollTop -= 1000 + 70;
+    fullPage() {
+      let distence = document.body.scrollTop;
+      console.log(distence);
+      
 
-        // }
-        document.body.scrollTop -= 1000;
-        console.log(document.body.scrollTop);
-      } else if (event.wheelDelta < 0) {
-        // alert('向下滚动');
-        document.body.scrollTop += 1000;
-        console.log(document.body.scrollTop);
-      }
+      // let total = document.body.clientHeight;
+      // console.log('网页可见区域高度' + total);
+      // let a = window.screen.availHeight;
+      // console.log('屏幕可用工作区高度' + a);
+      //  if( distence > 0 ) {
+      //    document.body.scrollTop += 1080;
+      //  } 
+      //  let total = 
     }
+    // fullPage() {
+    //   document.addEventListener("DOMContentLoaded", function() {
+    //     var body = document.body,
+    //       html = document.documentElement;
+    //     var itv, height = document.body.offsetHeight;
+    //     var page = scrollTop() / height | 0;
+    //     //窗口大小改变事件
+    //     addEventListener("resize", onresize, false);
+    //     onresize();
+    //     //滚轮事件
+    //     document.body.addEventListener(
+    //       "onwheel" in document ? "wheel" : "mousewheel",
+    //       function(e) {
+    //         clearTimeout(itv);
+    //         itv = setTimeout(function() {
+    //           var delta = e.wheelDelta / 120 || -e.deltaY / 3;
+    //           page -= delta;
+    //           var max = (document.body.scrollHeight / height | 0) - 1;
+    //           if (page < 0) return page = 0;
+    //           if (page > max) return page = max;
+    //           move();
+    //         }, 100);
+    //         e.preventDefault();
+    //       }
+    //     );
+    //     //平滑滚动
+    //     function move() {
+    //       var value = height * page;
+    //       var diff = scrollTop() - value;
+    //       (function callee() {
+    //         diff = diff / 1.2 | 0;
+    //         scrollTop(value + diff);
+    //         if (diff) itv = setTimeout(callee, 16);
+    //       })();
+    //     };
+    //     //resize事件
+    //     function onresize() {
+    //       height = body.offsetHeight;
+    //       move();
+    //     };
+    //     //获取或设置scrollTop
+    //     function scrollTop(v) {
+    //       if (v == null) return Math.max(body.scrollTop, html.scrollTop);
+    //       else body.scrollTop = html.scrollTop = v;
+    //     };
+    //   });
+    // },
+
+
   }
 }
 </script>

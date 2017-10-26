@@ -22,7 +22,7 @@ body {
 
 }
 .navbar{
-  min-width: 1280px;
+  min-width: 1000px;
 }
 header {
     width: 100%;

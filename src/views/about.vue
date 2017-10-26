@@ -119,7 +119,7 @@
 .about {
   margin-top: 70px;
   overflow: hidden;
-  min-width: 1360px;
+  min-width: 1100px;
   .banner {
     position: relative;
     >div>div:nth-child(1) {

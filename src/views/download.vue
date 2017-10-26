@@ -57,7 +57,7 @@
                   <ul>
                     <li v-for="(download,index) in downloadList" :key="download.index"> {{ download.li }} </li>
                     <li>
-                      <img src="../../static/img/download/qr_code.png" alt="">
+                      <img src="../../static/img/download/qr_code.png"  class="img-responsive" alt="">
                     </li>
                   </ul>
                 </el-col>
@@ -78,67 +78,68 @@
 </template>
 
 <style lang="less" scoped>
-.download {
-  min-width: 800px;
-  margin-top: 70px;
-  .clear {
-    clear: both;
-  }
-  .img-responsive {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-  .banner {
-    position: relative;
-  }
-  .app {
-    position: absolute;
-    top: 19%;
-    left: 21%;
-    width: 25%;
-    img {
-      margin-bottom: 20px;
-    }
-    .ios img:nth-child(1) {
-      margin-bottom: 35px;
-    }
-  }
-  .map {
-    position: relative;
-  }
-  .contact {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 10%;
-    left: 0;
-    overflow: hidden;
-    p {
-      font-size: 30px;
-      color: #fff;
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .address li:first-child {
-      margin-bottom: 10px;
-    }
-    ul {
-      float: left;
-      li:first-child {
-        margin-bottom: 30px;
+ .download {
+      min-width:1000px;
+      margin-top: 70px;
+      .clear {
+        clear: both;
       }
-      li {
-        color: #ddd;
-        font-size: 15px;
-        margin-bottom: 10px;
+      .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
       }
-      li:focus {
-        color: #1d90e6;
+      .banner {
+        position: relative;
+      }
+      .app {
+        position: absolute;
+        top: 19%;
+        left: 21%;
+        width: 25%;
+        img {
+          margin-bottom: 20px;
+        }
+        .ios img:nth-child(1) {
+          margin-bottom: 35px;
+        }
+      }
+      .map {
+        position: relative;
+      }
+      .contact {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 5%;
+        left: 0;
+        overflow: hidden;
+        p {
+          font-size: 30px;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 2%;
+        }
+        .address li:first-child {
+          margin-bottom: 10px;
+        }
+        ul {
+          float: left;
+          li:first-child {
+            margin-bottom: 30px;
+          }
+          li {
+            color: #ddd;
+            font-size: 15px;
+            margin-bottom: 10px;
+          }
+          li:focus {
+            color: #1d90e6;
+          }
+        }
       }
     }
-  }
-}
+
 </style>
 
 <script>

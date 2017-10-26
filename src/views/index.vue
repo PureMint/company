@@ -131,7 +131,7 @@
 @import '../common/css/variable.less';
 .home {
     margin-top: 70px;
-    min-width: 1360px;
+    min-width: 1000px;
     .img-responsive {
         display: inline-block;
         height: 100%;
@@ -423,7 +423,7 @@ export default {
     },
     methods: {
         goTop() {
-           document.body.scrollTop = 0; 
+           document.body.scrollTop = 0;
            document.documentElement.scrollTop = 0;
         }
     },

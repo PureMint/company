@@ -1,5 +1,5 @@
 <template>
-  <section class="product">
+  <section id="product">
     <!-- 导航栏 -->
     <header class="navbar">
       <div class="logo">
@@ -14,10 +14,10 @@
       </nav>
     </header>
     <!-- <v-header></v-header> -->
-    <el-row>
+    <el-row id="main">
       <!-- 全网搜索 -->
       <el-col :span="24">
-        <div class="d_jump search" id="search">
+        <div class="page" id="search">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
               <p>全网搜索</p>
@@ -33,7 +33,7 @@
       </el-col>
       <!-- 流程定制 -->
       <el-col :span="24">
-        <div class="d_jump custom" id="custom">
+        <div class="page" id="custom">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
               <p>流程定制</p>
@@ -49,7 +49,7 @@
       </el-col>
       <!-- 统计分析 -->
       <el-col :span="24">
-        <div class="d_jump analyse" id="analyse">
+        <div class="page" id="analyse">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
               <p>统计分析</p>
@@ -65,7 +65,7 @@
       </el-col>
       <!-- 投后管理 -->
       <el-col :span="24">
-        <div class="d_jump manage" id="manage">
+        <div class="page" id="manage">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
               <p>投后管理</p>
@@ -81,7 +81,7 @@
       </el-col>
       <!-- 文档管理 -->
       <el-col :span="24">
-        <div class="d_jump file" id="file">
+        <div class="page" id="file">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
               <p>文档管理</p>
@@ -97,7 +97,7 @@
       </el-col>
       <!-- 协同办公 -->
       <el-col :span="24">
-        <div class="d_jump work" id="work">
+        <div class="page" id="work">
           <div class="contentBox">
             <div class="text" style="top:260px;right:100px;margin-left:107px;">
               <p>协同办公</p>
@@ -113,7 +113,7 @@
       </el-col>
       <!-- 风险预警 -->
       <el-col :span="24">
-        <div class="d_jump alarm" id="alarm">
+        <div class="page" id="alarm">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
               <p>风险预警</p>
@@ -200,45 +200,45 @@ header {
   /*}*/
 }
 
-.product {
+#product {
   // margin-top: 70px;
   min-width: 1000px;
-  .search {
+  #search {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
   }
-  .custom {
+  #custom {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/custom-bg.png) no-repeat;
     background-size: 100% 100%;
   }
-  .analyse {
+  #analyse {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/analyse-bg.png) no-repeat;
     background-size: 100% 100%;
   }
-  .manage {
+  #manage {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/manage-bg.png) no-repeat;
     background-size: 100% 100%;
   }
-  .file {
+  #file {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/file-bg.png) no-repeat;
     background-size: 100% 100%;
   }
-  .work {
+  #work {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/work-bg.png) no-repeat;
     background-size: 100% 100%;
   }
-  .alarm {
+  #alarm {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/alarm-bg.png) no-repeat;
@@ -311,10 +311,6 @@ header {
     }
   }
 }
-
-// .bg-s {
-//    background: #fff;
-// }
 </style>
 
 
@@ -325,9 +321,11 @@ export default {
     this.goTop();
     document.addEventListener('mousewheel', this.scrollFunc, false);
   },
+  mounted() {
+    // this.pageShow();
+  },
   data() {
     return {
-      // show1: false,
       navList: [
         {
           menu: '全网搜索',
@@ -358,8 +356,6 @@ export default {
           id: '#alarm'
         }
       ],
-      //      active:true
-      steps: "1083"
     }
   },
   methods: {
@@ -375,12 +371,23 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
+    // pageShow() {
+    //   let product = document.getElementById("product");
+    //   let total = document.documentElement.clientHeight;
+    //   product.style.height = total + "px";
+    //   let obj = document.getElementsByTagName("div");
+    //   for (let i = 0; i < obj.length; i++) {
+    //     if (obj[i].className == 'page') {
+    //       obj[i].style.height = total + "px";
+    //     }
+    //   }
+    // },
     scrollFunc(event) {
       // let num = 0;
       event = event || window.event;
       console.log(event);
       // let distence = document.body.scrollTop;
-      // let total = document.body.clientHeight;
+      var total = document.documentElement.clientHeight;
       // console.log(total);
       if (event.wheelDelta > 0) {
         // alert('向上滚动');

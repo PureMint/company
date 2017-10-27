@@ -323,7 +323,7 @@ header {
 export default {
   created() {
     this.goTop();
-    this.fullPage();
+    window.addEventListener('mousewheel', this.scrollFunc, false);
   },
   data() {
     return {
@@ -367,10 +367,6 @@ export default {
       var anchor = this.$el.querySelector(selector);
       document.body.scrollTop = anchor.offsetTop;
       document.documentElement.scrollTop = anchor.offsetTop;
-
-      // if(anchor.offsetTop<1150) {
-      //     this.show1 = true;
-      // }
     },
     jumpHome() {
       this.$router.push({ name: 'home' });

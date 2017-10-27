@@ -1,5 +1,5 @@
 <template>
-  <section class="product" id="product">
+  <section class="product">
     <!-- 导航栏 -->
     <header class="navbar">
       <div class="logo">
@@ -14,9 +14,9 @@
       </nav>
     </header>
     <!-- <v-header></v-header> -->
-    <el-row id="main">
+    <el-row  @mouseover="handleScroll(item,index)">
       <!-- 全网搜索 -->
-      <el-col :span="24">
+      <el-col :span="24" >
         <div class="d_jump search" id="search">
           <div class="contentBox">
             <div class="text" style="top:260px;left:50px; margin-right: 177px;">
@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="imgRight">
-              <img src="/static/img/product/search-icon.png" alt="">
+              <img src="/static/img/product/search-icon.png" class="img-responsive" alt="">
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div class="imgLeft">
-              <img src="/static/img/product/custom-icon.png" alt="">
+              <img src="/static/img/product/custom-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
               </div>
             </div>
             <div class="imgRight">
-              <img src="/static/img/product/analyse-icon.png" alt="">
+              <img src="/static/img/product/analyse-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
               </div>
             </div>
             <div class="imgLeft">
-              <img src="/static/img/product/manage-icon.png" alt="">
+              <img src="/static/img/product/manage-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="imgRight">
-              <img src="/static/img/product/file-icon.png" alt="">
+              <img src="/static/img/product/file-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
               </div>
             </div>
             <div class="imgLeft">
-              <img src="/static/img/product/work-icon.png" alt="">
+              <img src="/static/img/product/work-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
               </div>
             </div>
             <div class="imgRight">
-              <img src="/static/img/product/alarm-icon.png" alt="">
+              <img src="/static/img/product/alarm-icon.png"  class="img-responsive"  alt="">
             </div>
           </div>
         </div>
@@ -149,6 +149,11 @@ header {
   background: #f2f4f8;
   min-width: 1000px;
   overflow: hidden;
+  .img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
   .logo {
     position: fixed;
     top: 9px;
@@ -158,7 +163,7 @@ header {
     float: right; // width: 870px;
     /*padding-right: 100px;*/
     padding-left: 230px;
-    min-width: 670px;
+    /*min-width: 400px;*/
     overflow: hidden;
     >li {
       float: left;
@@ -197,12 +202,11 @@ header {
 
 .product {
   margin-top: 70px;
-  min-width: 1360px;
+  min-width: 1000px;
   .search {
     position: relative;
     height: 1080px;
     background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
-    // background-size: 100%;
   }
   .custom {
     position: relative;
@@ -291,11 +295,6 @@ header {
     display: flex;
     justify-content: center;
     background: #2A3142;
-    position: fixed;
-    right: 30px;
-    bottom: 100px;
-    border-radius: 50%;
-    font-size: 13px;
     div {
       width: 75px;
       height: 70px;
@@ -317,17 +316,12 @@ header {
 <script>
 // import vHeader from '../components/productHeader'
 export default {
-  mounted() {
-    window.addEventListener('mousewheel', this.scrollFunc, false);
-  },
   created() {
     this.goTop();
-    // this.fullPage();
-    // this.jump(index);
+    this.fullPage();
   },
   data() {
     return {
-      number: 0,
       // show1: false,
       navList: [
         {
@@ -358,7 +352,9 @@ export default {
           menu: '风险预警',
           id: '#alarm'
         }
-      ]
+      ],
+//      active:true
+      steps:"1083"
     }
   },
   methods: {
@@ -366,6 +362,10 @@ export default {
       var anchor = this.$el.querySelector(selector);
       document.body.scrollTop = anchor.offsetTop;
       document.documentElement.scrollTop = anchor.offsetTop;
+
+      // if(anchor.offsetTop<1150) {
+      //     this.show1 = true;
+      // }
     },
     jumpHome() {
       this.$router.push({ name: 'home' });
@@ -374,33 +374,71 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
-    scrollFunc(e) {
-      // let num = 0;
-      e = event || window.event;
-        console.log(e);
-        // e.deltaY = 0;
-      // let distence = document.body.scrollTop;
-      // let total = document.body.clientHeight;
-      if (e.wheelDelta > 0) {
-        // this.number = 0;
-        // this.number+=1;
-        // console.log(this.number);
-        // alert('向上滚动');
-        // if(this.number == '4'){
-        //   console.log(4);
-        //   document.body.scrollTop -= 1000;
-        // }else{
-        //   document.body.scrollTop -= 1000 + 70;
-
-        // }
-        document.body.scrollTop -= 1000;
-        console.log(document.body.scrollTop);
-      } else if (event.wheelDelta < 0) {
-        // alert('向下滚动');
-        document.body.scrollTop += 1000;
-        console.log(document.body.scrollTop);
+    fullPage() {
+      document.addEventListener("DOMContentLoaded", function() {
+        var body = document.body,
+          html = document.documentElement;
+        var itv, height = document.body.offsetHeight;
+        var page = scrollTop() / height | 0;
+        //窗口大小改变事件
+        addEventListener("resize", onresize, false);
+        onresize();
+        //滚轮事件
+        document.body.addEventListener(
+          "onwheel" in document ? "wheel" : "mousewheel",
+          function(e) {
+            clearTimeout(itv);
+            itv = setTimeout(function() {
+              var delta = e.wheelDelta / 120 || -e.deltaY / 3;
+              page -= delta;
+              var max = (document.body.scrollHeight / height | 0) - 1;
+              if (page < 0) return page = 0;
+              if (page > max) return page = max;
+              move();
+            }, 100);
+            e.preventDefault();
+          }
+        );
+        //平滑滚动
+        function move() {
+          var value = height * page;
+          var diff = scrollTop() - value;
+          (function callee() {
+            diff = diff / 1.2 | 0;
+            scrollTop(value + diff);
+            if (diff) itv = setTimeout(callee, 16);
+          })();
+        };
+        //resize事件
+        function onresize() {
+          height = body.offsetHeight;
+          move();
+        };
+        //获取或设置scrollTop
+        function scrollTop(v) {
+          if (v == null) return Math.max(body.scrollTop, html.scrollTop);
+          else body.scrollTop = html.scrollTop = v;
+        };
+      });
+    },
+    handleScroll(item,index){
+        console.log(item);
+        console.log(index)
+//        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+//        this.scrollTop = 1080;
+//        let scrolled = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+//        if (scrolled == "1083") {
+//          scrolled.item = this.steps
+//        }
+//        else if (scrolled < 1083 && scrolled >= 2166) {
+//          this.steps.active = 1
+//        } else {
+//          this.steps.active = 1083
+//        }
       }
-    }
+  },
+  mounted(){
+      window.addEventListener("scroll",this.handleScroll)
   }
 }
 </script>

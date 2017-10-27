@@ -295,6 +295,11 @@ header {
     display: flex;
     justify-content: center;
     background: #2A3142;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    border-radius: 50%;
+    font-size: 13px;
     div {
       width: 75px;
       height: 70px;
@@ -374,18 +379,17 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
-    scrollFunc(e) {
+    scrollFunc(event) {
       // let num = 0;
-      e = event || window.event;
-      console.log(e);
+      event = event || window.event;
+      console.log(event);
       // let distence = document.body.scrollTop;
       // let total = document.body.clientHeight;
-      if (e.wheelDelta > 0) {
+      if (event.wheelDelta > 0) {
         // alert('向上滚动');
         document.body.scrollTop -= 1000;
-
         console.log(document.body.scrollTop);
-      } else if (e.wheelDelta < 0) {
+      } else if (event.wheelDelta < 0) {
         // alert('向下滚动');
         document.body.scrollTop += 1000;
         console.log(document.body.scrollTop);

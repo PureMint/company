@@ -139,261 +139,261 @@
 
 
 <style lang="less" scoped>
-@import '../common/css/variable.less';
-header {
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  background: #f2f4f8;
-  min-width: 1000px;
-  overflow: hidden;
-  .img-responsive {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-  .logo {
+  @import '../common/css/variable.less';
+  header {
+    width: 100%;
+    height: 70px;
     position: fixed;
-    top: 9px;
-    left: 50px;
-  }
-  ul {
-    float: right; // width: 870px;
-    /*padding-right: 100px;*/
-    padding-left: 230px;
-    /*min-width: 400px;*/
+    top: 0;
+    z-index: 9999;
+    background: #f2f4f8;
+    min-width: 1000px;
     overflow: hidden;
-    >li {
-      float: left;
-      color: #2A3142;
-      height: 70px;
-      width: 110px;
+    .img-responsive {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+    .logo {
+      position: fixed;
+      top: 9px;
+      left: 50px;
+    }
+    ul {
+      float: right; // width: 870px;
+      /*padding-right: 100px;*/
+      padding-left: 230px;
+      /*min-width: 400px;*/
+      overflow: hidden;
+      >li {
+        float: left;
+        color: #2A3142;
+        height: 70px;
+        width: 110px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 70px;
+        cursor: pointer;
+        &:hover {
+          background: rgba(200, 200, 200, 0.15);
+          border-bottom: 2px solid @color-border; // color: @color-border;
+        }
+      }
+    }
+
+    /*@media screen and (max-width:1080px) {*/
+    /*ul {*/
+    /*display: none; // float: right;*/
+    /*// padding-right: 100px;*/
+    /*>li {*/
+    /*color: #2A3142;*/
+    /*height: 70px;*/
+    /*width: 110px;*/
+    /*text-align: center;*/
+    /*line-height: 70px;*/
+    /*cursor: pointer;*/
+    /*&:hover {*/
+    /*background: rgba(225, 225, 225, 0.15);*/
+    /*}*/
+    /*}*/
+    /*}*/
+    /*}*/
+  }
+
+  .product {
+    // margin-top: 70px;
+    min-width: 1000px;
+    .search {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
+    }
+    .custom {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/custom-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .analyse {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/analyse-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .manage {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/manage-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .file {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/file-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .work {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/work-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .alarm {
+      position: relative;
+      height: 1080px;
+      background: url(../../static/img/product/alarm-bg.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .contentBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -560px;
+      margin-top: -452px;
+      width: 1120px;
+      height: 903px;
+    }
+    .text {
+      width: 310px;
+      height: 340px;
+      position: absolute;
+      background: rgba(255, 255, 255, .4);
+      padding: 50px 45px;
+      color: #00727d;
       box-sizing: border-box;
-      text-align: center;
-      line-height: 70px;
+      p {
+        font-size: 36px;
+      }
+      div {
+        font-size: 24px;
+        box-sizing: border-box;
+        margin-top: 60px;
+      }
+    }
+    .imgRight {
+      position: absolute;
+      right: 100px;
+      top: 150px;
       cursor: pointer;
       &:hover {
-        background: rgba(200, 200, 200, 0.15);
-        border-bottom: 2px solid @color-border; // color: @color-border;
+        transition: all 1s ease;
+        transform: rotate(10deg); // transform: rotate(45deg) translate(50px, 100px) scale(1.2);
+      }
+    }
+    .imgLeft {
+      position: absolute;
+      left: 0;
+      top: 226px;
+      cursor: pointer;
+      &:hover {
+        transition: all 1s ease;
+        transform: rotate(-10deg); // transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
+      }
+    }
+    .footer {
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      background: #2A3142;
+      position: fixed;
+      right: 30px;
+      bottom: 50px;
+      border-radius: 50%;
+      font-size: 13px;
+      div {
+        width: 75px;
+        height: 70px;
+        padding: 15px 0;
+        text-align: center;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
       }
     }
   }
 
-  /*@media screen and (max-width:1080px) {*/
-  /*ul {*/
-  /*display: none; // float: right;*/
-  /*// padding-right: 100px;*/
-  /*>li {*/
-  /*color: #2A3142;*/
-  /*height: 70px;*/
-  /*width: 110px;*/
-  /*text-align: center;*/
-  /*line-height: 70px;*/
-  /*cursor: pointer;*/
-  /*&:hover {*/
-  /*background: rgba(225, 225, 225, 0.15);*/
-  /*}*/
-  /*}*/
-  /*}*/
-  /*}*/
-}
-
-.product {
-  // margin-top: 70px;
-  min-width: 1000px;
-  .search {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
-  }
-  .custom {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/custom-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .analyse {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/analyse-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .manage {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/manage-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .file {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/file-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .work {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/work-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .alarm {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/alarm-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .contentBox {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -560px;
-    margin-top: -452px;
-    width: 1120px;
-    height: 903px;
-  }
-  .text {
-    width: 310px;
-    height: 340px;
-    position: absolute;
-    background: rgba(255, 255, 255, .4);
-    padding: 50px 45px;
-    color: #00727d;
-    box-sizing: border-box;
-    p {
-      font-size: 36px;
-    }
-    div {
-      font-size: 24px;
-      box-sizing: border-box;
-      margin-top: 60px;
-    }
-  }
-  .imgRight {
-    position: absolute;
-    right: 100px;
-    top: 150px;
-    cursor: pointer;
-    &:hover {
-      transition: all 1s ease;
-      transform: rotate(10deg); // transform: rotate(45deg) translate(50px, 100px) scale(1.2);
-    }
-  }
-  .imgLeft {
-    position: absolute;
-    left: 0;
-    top: 226px;
-    cursor: pointer;
-    &:hover {
-      transition: all 1s ease;
-      transform: rotate(-10deg); // transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
-    }
-  }
-  .footer {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    background: #2A3142;
-    position: fixed;
-    right: 30px;
-    bottom: 50px;
-    border-radius: 50%;
-    font-size: 13px;
-    div {
-      width: 75px;
-      height: 70px;
-      padding: 15px 0;
-      text-align: center;
-      box-sizing: border-box;
-      color: #fff;
-      cursor: pointer;
-    }
-  }
-}
-
-// .bg-s {
-//    background: #fff;
-// }
+  // .bg-s {
+  //    background: #fff;
+  // }
 </style>
 
 
 <script>
-// import vHeader from '../components/productHeader'
-export default {
-  created() {
-    this.goTop();
-    document.addEventListener('mousewheel', this.scrollFunc, false);
-  },
-  data() {
-    return {
-      // show1: false,
-      navList: [
-        {
-          menu: '全网搜索',
-          id: '#search'
-        },
-        {
-          menu: '流程定制',
-          id: '#custom'
-        },
-        {
-          menu: '统计分析',
-          id: '#analyse'
-        },
-        {
-          menu: '投后管理',
-          id: '#manage'
-        },
-        {
-          menu: '文档管理',
-          id: '#file'
-        },
-        {
-          menu: '协同办公',
-          id: '#work'
-        },
-        {
-          menu: '风险预警',
-          id: '#alarm'
-        }
-      ],
-      //      active:true
+  // import vHeader from '../components/productHeader'
+  export default {
+    created() {
+      this.goTop();
+      document.addEventListener('mousewheel', this.scrollFunc, false);
+    },
+    data() {
+      return {
+        // show1: false,
+        navList: [
+          {
+            menu: '全网搜索',
+            id: '#search'
+          },
+          {
+            menu: '流程定制',
+            id: '#custom'
+          },
+          {
+            menu: '统计分析',
+            id: '#analyse'
+          },
+          {
+            menu: '投后管理',
+            id: '#manage'
+          },
+          {
+            menu: '文档管理',
+            id: '#file'
+          },
+          {
+            menu: '协同办公',
+            id: '#work'
+          },
+          {
+            menu: '风险预警',
+            id: '#alarm'
+          }
+        ],
+        //      active:true
 //      steps: "1083"
-    }
-  },
-  methods: {
-    goAnchor(selector) {
-      var anchor = this.$el.querySelector(selector);
-      document.body.scrollTop = anchor.offsetTop;
-      document.documentElement.scrollTop = anchor.offsetTop;
+      }
     },
-    jumpHome() {
-      this.$router.push({ name: 'home' });
-    },
-    goTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    },
-    scrollFunc(event) {
-      // let num = 0;
-      event = event || window.event;
-      console.log(event);
-      // let distence = document.body.scrollTop;
-      // let total = document.body.clientHeight;
-      // console.log(total);
-      if (event.wheelDelta > 0) {
-        // alert('向上滚动');
-        document.body.scrollTop -= 1000;
-        // document.body.scrollTop -= total/7;
-        console.log(document.body.scrollTop);
-      } else if (event.wheelDelta < 0) {
-        // alert('向下滚动');
-        //  document.body.scrollTop += total/7;
-        document.body.scrollTop += 1000;
-        console.log(document.body.scrollTop);
+    methods: {
+      goAnchor(selector) {
+        var anchor = this.$el.querySelector(selector);
+        document.body.scrollTop = anchor.offsetTop;
+        document.documentElement.scrollTop = anchor.offsetTop;
+      },
+      jumpHome() {
+        this.$router.push({ name: 'home' });
+      },
+      goTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      },
+      scrollFunc(event) {
+        // let num = 0;
+        event = event || window.event;
+        console.log(event);
+        // let distence = document.body.scrollTop;
+        // let total = document.body.clientHeight;
+        // console.log(total);
+        if (event.wheelDelta > 0) {
+          // alert('向上滚动');
+          document.body.scrollTop -= 1000;
+          // document.body.scrollTop -= total/7;
+          console.log(document.body.scrollTop);
+        } else if (event.wheelDelta < 0) {
+          // alert('向下滚动');
+          //  document.body.scrollTop += total/7;
+          document.body.scrollTop += 1000;
+          console.log(document.body.scrollTop);
+        }
       }
     }
   }
-}
 </script>

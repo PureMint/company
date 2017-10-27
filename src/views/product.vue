@@ -394,6 +394,7 @@ export default {
 
         // }
         document.body.scrollTop -= 1000;
+        
         console.log(document.body.scrollTop);
       } else if (event.wheelDelta < 0) {
         // alert('向下滚动');

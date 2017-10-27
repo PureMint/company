@@ -323,7 +323,7 @@ header {
 export default {
   created() {
     this.goTop();
-    window.addEventListener('mousewheel', this.scrollFunc, false);
+    document.addEventListener('mousewheel', this.scrollFunc, false);
   },
   data() {
     return {

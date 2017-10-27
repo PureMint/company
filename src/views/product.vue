@@ -14,7 +14,7 @@
       </nav>
     </header>
     <!-- <v-header></v-header> -->
-    <el-row  @mouseover="handleScroll(item,index)">
+    <el-row>
       <!-- 全网搜索 -->
       <el-col :span="24" >
         <div class="d_jump search" id="search">
@@ -420,25 +420,7 @@ export default {
           else body.scrollTop = html.scrollTop = v;
         };
       });
-    },
-    handleScroll(item,index){
-        console.log(item);
-        console.log(index)
-//        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-//        this.scrollTop = 1080;
-//        let scrolled = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-//        if (scrolled == "1083") {
-//          scrolled.item = this.steps
-//        }
-//        else if (scrolled < 1083 && scrolled >= 2166) {
-//          this.steps.active = 1
-//        } else {
-//          this.steps.active = 1083
-//        }
-      }
-  },
-  mounted(){
-      window.addEventListener("scroll",this.handleScroll)
+    }
   }
 }
 </script>

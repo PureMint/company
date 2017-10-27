@@ -27,7 +27,7 @@
         <el-col class="welImg" :span="5" v-for="(item,index) in welImg" :key="item.index">
           <!-- <div @mouseleave="welLeave(item,index)" @mouseover="welHover(item,index)"> -->
           <div>
-            <img :src="item.src" class="srcha">
+            <img :src="item.src" class="img-responsive">
             <div :class="item.welImg_posi"></div>
             <span class="span" v-show="index == 1">我们的休息室</span>
           </div>
@@ -120,6 +120,11 @@
   margin-top: 70px;
   overflow: hidden;
   min-width: 1100px;
+  .img-responsive {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
   .banner {
     position: relative;
     >div>div:nth-child(1) {
@@ -171,8 +176,8 @@
       .span {
         position: absolute;
         text-align: center;
-        top: 90px;
-        left: 40%;
+        top: 37px;
+        left: 38%;
       }
       >div {
         overflow: hidden;

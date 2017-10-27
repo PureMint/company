@@ -8,7 +8,7 @@
       <nav class="menu">
         <ul>
           <li v-for="(item,index) in navList" class="animated bounceIn" :key="item.index">
-            <a style="color:#2A3142" href="javascript:void(0)" @click="goAnchor(item.id,index)"> {{item.menu}} </a>
+            <a style="color:#2A3142" href="javascript:void(0)" @click="goAnchor(item.id)"> {{item.menu}} </a>
           </li>
         </ul>
       </nav>
@@ -363,7 +363,7 @@ export default {
     }
   },
   methods: {
-    goAnchor(selector, index) {
+    goAnchor(selector) {
       var anchor = this.$el.querySelector(selector);
       document.body.scrollTop = anchor.offsetTop;
       document.documentElement.scrollTop = anchor.offsetTop;

@@ -201,7 +201,7 @@ header {
 }
 
 .product {
-  margin-top: 70px;
+  // margin-top: 70px;
   min-width: 1000px;
   .search {
     position: relative;
@@ -381,12 +381,15 @@ export default {
       console.log(event);
       // let distence = document.body.scrollTop;
       // let total = document.body.clientHeight;
+      // console.log(total);
       if (event.wheelDelta > 0) {
         // alert('向上滚动');
         document.body.scrollTop -= 1000;
+        // document.body.scrollTop -= total/7;
         console.log(document.body.scrollTop);
       } else if (event.wheelDelta < 0) {
         // alert('向下滚动');
+        //  document.body.scrollTop += total/7;
         document.body.scrollTop += 1000;
         console.log(document.body.scrollTop);
       }

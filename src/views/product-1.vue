@@ -201,93 +201,82 @@ header {
 }
 
 #product {
-  // margin-top: 70px;
-  min-width: 1000px;
-  #search {
+  width: 100%; // overflow: hidden; // margin-top: 70px;
+  // min-width: 1000px;
+  #main {
+    // height: 2944px;
+    top: 0;
     position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/search-bg.png) no-repeat; // background-size: 100% 100%;
-  }
-  #custom {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/custom-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  #analyse {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/analyse-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  #manage {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/manage-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  #file {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/file-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  #work {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/work-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  #alarm {
-    position: relative;
-    height: 1080px;
-    background: url(../../static/img/product/alarm-bg.png) no-repeat;
-    background-size: 100% 100%;
-  }
-  .contentBox {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -560px;
-    margin-top: -452px;
-    width: 1120px;
-    height: 903px;
-  }
-  .text {
-    width: 310px;
-    height: 340px;
-    position: absolute;
-    background: rgba(255, 255, 255, .4);
-    padding: 50px 45px;
-    color: #00727d;
-    box-sizing: border-box;
-    p {
-      font-size: 36px;
+    >div {
+      position: relative;
+      background-size: 100% 100%;
     }
-    div {
-      font-size: 24px;
+    #search {
+      background: url(../../static/img/product/search-bg.png) no-repeat;
+    }
+    #custom {
+      background: url(../../static/img/product/custom-bg.png) no-repeat;
+    }
+    #analyse {
+      background: url(../../static/img/product/analyse-bg.png) no-repeat;
+    }
+    #manage {
+      background: url(../../static/img/product/manage-bg.png) no-repeat;
+    }
+    #file {
+      background: url(../../static/img/product/file-bg.png) no-repeat;
+    }
+    #work {
+      background: url(../../static/img/product/work-bg.png) no-repeat;
+    }
+    #alarm {
+      background: url(../../static/img/product/alarm-bg.png) no-repeat;
+    }
+    .contentBox {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -560px;
+      margin-top: -452px;
+      width: 1120px;
+      height: 903px;
+    }
+    .text {
+      width: 310px;
+      height: 340px;
+      position: absolute;
+      background: rgba(255, 255, 255, .4);
+      padding: 50px 45px;
+      color: #00727d;
       box-sizing: border-box;
-      margin-top: 60px;
+      p {
+        font-size: 36px;
+      }
+      div {
+        font-size: 24px;
+        box-sizing: border-box;
+        margin-top: 60px;
+      }
     }
-  }
-  .imgRight {
-    position: absolute;
-    right: 100px;
-    top: 150px;
-    cursor: pointer;
-    &:hover {
-      transition: all 1s ease;
-      transform: rotate(10deg); // transform: rotate(45deg) translate(50px, 100px) scale(1.2);
+    .imgRight {
+      position: absolute;
+      right: 100px;
+      top: 150px;
+      cursor: pointer;
+      &:hover {
+        transition: all 1s ease;
+        transform: rotate(10deg); // transform: rotate(45deg) translate(50px, 100px) scale(1.2);
+      }
     }
-  }
-  .imgLeft {
-    position: absolute;
-    left: 0;
-    top: 226px;
-    cursor: pointer;
-    &:hover {
-      transition: all 1s ease;
-      transform: rotate(-10deg); // transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
+    .imgLeft {
+      position: absolute;
+      left: 0;
+      top: 226px;
+      cursor: pointer;
+      &:hover {
+        transition: all 1s ease;
+        transform: rotate(-10deg); // transform: rotate(-360deg) translate(50px, 100px) scale(1.2);
+      }
     }
   }
   .footer {
@@ -322,7 +311,7 @@ export default {
     document.addEventListener('mousewheel', this.scrollFunc, false);
   },
   mounted() {
-    // this.pageShow();
+    this.pageShow();
   },
   data() {
     return {
@@ -371,34 +360,27 @@ export default {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     },
-    // pageShow() {
-    //   let product = document.getElementById("product");
-    //   let total = document.documentElement.clientHeight;
-    //   product.style.height = total + "px";
-    //   let obj = document.getElementsByTagName("div");
-    //   for (let i = 0; i < obj.length; i++) {
-    //     if (obj[i].className == 'page') {
-    //       obj[i].style.height = total + "px";
-    //     }
-    //   }
-    // },
+    pageShow() {
+      let product = document.getElementById("product");
+      let total = document.documentElement.clientHeight;
+      product.style.height = total + "px";
+      let obj = document.getElementsByTagName("div");
+      for (let i = 0; i < obj.length; i++) {
+        if (obj[i].className == 'page') {
+          obj[i].style.height = total + "px";
+        }
+      }
+    },
     scrollFunc(event) {
-      // let num = 0;
       event = event || window.event;
-      console.log(event);
-      // let distence = document.body.scrollTop;
+      // console.log(event);
       var total = document.documentElement.clientHeight;
-      // console.log(total);
       if (event.wheelDelta > 0) {
         // alert('向上滚动');
         document.body.scrollTop -= 1000;
-        // document.body.scrollTop -= total/7;
-        console.log(document.body.scrollTop);
       } else if (event.wheelDelta < 0) {
         // alert('向下滚动');
-        //  document.body.scrollTop += total/7;
         document.body.scrollTop += 1000;
-        console.log(document.body.scrollTop);
       }
     }
   }

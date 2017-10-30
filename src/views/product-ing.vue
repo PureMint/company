@@ -183,45 +183,36 @@ header {
 }
 
 #product {
-    width: 100%; // overflow: hidden;
+    width: 100%; // overflow: hidden; // margin-top: 70px;
+    // min-width: 1000px;
     #main {
         // height: 2944px;
         top: 0;
         position: relative;
-        #search {
+        >div {
             position: relative;
+            background-size: 100% 100%;
+        }
+        #search {
             background: url(../../static/img/product/search-bg.png) no-repeat;
-            background-size: cover;
         }
         #custom {
-            position: relative;
             background: url(../../static/img/product/custom-bg.png) no-repeat;
-            background-size: cover;
         }
         #analyse {
-            position: relative;
             background: url(../../static/img/product/analyse-bg.png) no-repeat;
-            background-size: cover;
         }
         #manage {
-            position: relative;
             background: url(../../static/img/product/manage-bg.png) no-repeat;
-            background-size: cover;
         }
         #file {
-            position: relative;
             background: url(../../static/img/product/file-bg.png) no-repeat;
-            background-size: cover;
         }
         #work {
-            position: relative;
             background: url(../../static/img/product/work-bg.png) no-repeat;
-            background-size: cover;
         }
         #alarm {
-            position: relative;
             background: url(../../static/img/product/alarm-bg.png) no-repeat;
-            background-size: cover;
         }
         .contentBox {
             position: absolute;
@@ -252,7 +243,7 @@ header {
         .imgRight {
             position: absolute;
             right: 100px;
-            top: 185px;
+            top: 150px;
             cursor: pointer;
             &:hover {
                 transition: all 1s ease;
@@ -376,7 +367,7 @@ export default {
             //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
             //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
             if ((endTime - startTime) < -1000) {
-                if (delta > 0 && parseInt(main.offsetTop) > -(step * 3)) {
+                if (delta > 0 && parseInt(main.offsetTop) > -(step * 6)) {
                     //向下滚动
                     now = now - step;
                     this.toPage(now);
@@ -393,8 +384,8 @@ export default {
         },
         toPage(distence) {
             // var  main = document.getElementById("main");
-            //   setTimeout("main.style.top = distence + 'px';", 1000);
-            main.style.top = distence + 'px';
+            setTimeout("main.style.top = distence + 'px'", 1000);
+            // main.style.top = distence + 'px';
             //javascript 实现动画效果
         }
     }
